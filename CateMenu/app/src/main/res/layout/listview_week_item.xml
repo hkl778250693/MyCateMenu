@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:gravity="center_vertical">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/paigu1"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.留香排骨"
+            android:textSize="18sp"
+            android:textColor="@color/yellow"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/collect"
+                android:drawableLeft="@mipmap/collect"
+                android:gravity="center"
+                android:drawablePadding="5dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/collect"
+                android:drawableLeft="@mipmap/collect"
+                android:gravity="center"
+                android:layout_marginLeft="20dp"
+                android:drawablePadding="5dp" />
+                android:gravity="center"
+                android:drawableLeft="@mipmap/collect"
+                android:drawablePadding="10dp"
+                android:layout_marginRight="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="顶一个"
+                android:gravity="center"
+                android:drawableLeft="@mipmap/zan"
+                android:drawablePadding="10dp"
+                android:layout_marginRight="20dp"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="2"
+            android:text="分开都是开发商的开发的速度来说的啥地方了肯定舒服了收到了附近"/>
+            android:paddingRight="10dp"
+            android:text="看到数据库及第三方件附"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="@color/yellow"
+            android:layout_height="wrap_content"
+            android:text="... ...[展开]"
+            android:layout_gravity="right"
+            android:layout_marginTop="2dp"/>
+            android:text="[展开]"
+            android:paddingRight="10dp"
+            android:layout_gravity="right"/>
+    </LinearLayout>
+
+</LinearLayout>

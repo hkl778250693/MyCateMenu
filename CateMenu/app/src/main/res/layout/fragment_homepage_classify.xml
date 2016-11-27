@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+
+                <android.support.v4.view.ViewPager
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/banner" />
+
+            </RelativeLayout>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp">
+
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableTop="@mipmap/sucai"
+                    android:gravity="center"
+                    android:text="@string/sucai"
+                    android:textColor="@drawable/classify_radiobutton_color"
+                    android:textSize="11sp" />
+
+                <RadioButton
+                    android:id="@+id/huncai_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableTop="@mipmap/huncai"
+                    android:gravity="center"
+
+                    android:text="@string/huncai"
+                    android:textColor="@drawable/classify_radiobutton_color"
+                    android:textSize="11sp" />
+
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+
+                    android:drawableTop="@mipmap/tangcai"
+                    android:gravity="center"
+                    android:text="@string/tangcai"
+                    android:textColor="@drawable/classify_radiobutton_color"
+                    android:textSize="11sp" />
+
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableTop="@mipmap/dainxin"
+
+                    android:gravity="center"
+                    android:text="@string/dianxin"
+                    android:textColor="@drawable/classify_radiobutton_color"
+                    android:textSize="11sp" />
+            </RadioGroup>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/lazy_person_imageview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@mipmap/lazyperson" />
+
+                <ImageView
+                    android:id="@+id/lose_weight_imageview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lazy_person_imageview"
+                    android:adjustViewBounds="true"
+                    android:src="@mipmap/loseweight" />
+
+                <ImageView
+                    android:id="@+id/child_imageview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lose_weight_imageview"
+                    android:layout_marginTop="9dp"
+                    android:adjustViewBounds="true"
+                    android:src="@mipmap/child" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

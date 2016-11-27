@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_square_discuss"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp"
+                    android:text="讨论"
+                    android:textColor="@drawable/shopfragment_radiobutton_color"
+                    android:textSize="18sp" />
+
+
+                <RadioButton
+                    android:id="@+id/rb_square_video"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp"
+                    android:text="视频"
+                    android:textColor="@drawable/shopfragment_radiobutton_color"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/rb_square_release"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp"
+                    android:text="发布"
+                    android:textColor="@drawable/shopfragment_radiobutton_color"
+                    android:textSize="18sp" />
+
+            </RadioGroup>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#C9C9C9" />
+
+            <LinearLayout
+                android:id="@+id/ll_square_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+</LinearLayout>
