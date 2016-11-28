@@ -55,6 +55,7 @@ public class HomePageActivity extends Activity {
     RadioButton mySixinBtn;
     RadioButton feedBackBtn;
     Intent intent;
+    Intent intent1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -146,7 +147,8 @@ public class HomePageActivity extends Activity {
                     startActivity(intent);
                     break;
                 case R.id.integral_btn:
-
+                    intent = new Intent(HomePageActivity.this,FeedBackActivity.class);
+                    startActivity(intent);
                     break;
                 case R.id.my_attention_btn:
                     intent = new Intent(HomePageActivity.this,AttentionActivity.class);
@@ -157,14 +159,13 @@ public class HomePageActivity extends Activity {
                     startActivity(intent);
                     break;
                 case R.id.my_sixin_btn:
-                    intent = new Intent(HomePageActivity.this,MinePrivateLetterActivity.class);
+                    intent = new Intent(HomePageActivity.this,SixinActivity.class);
                     startActivity(intent);
                     break;
                 case R.id.feed_back_btn:
                     intent = new Intent(HomePageActivity.this,FeedBackActivity.class);
                     startActivity(intent);
                     break;
-
             }
             transaction.commit();
         }
@@ -190,7 +191,6 @@ public class HomePageActivity extends Activity {
         mySixinBtn = (RadioButton) contentView.findViewById(R.id.integral_btn);
         feedBackBtn = (RadioButton) contentView.findViewById(R.id.integral_btn);
 
-
         //设置点击事件
         integralBtn.setOnClickListener(clickListener);
         myAttentionBtn.setOnClickListener(clickListener);
@@ -201,6 +201,7 @@ public class HomePageActivity extends Activity {
         popupWindow = new PopupWindow(contentView);
         popupWindow.setOutsideTouchable(true);
         popupWindow.setFocusable(true);
+        popupWindow.setTouchable(true);
         popupWindow.setWidth(LinearLayout.LayoutParams.WRAP_CONTENT);
         popupWindow.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
         popupWindow.setBackgroundDrawable(getResources().getDrawable(R.drawable.homepage_edittext_serch_shape));

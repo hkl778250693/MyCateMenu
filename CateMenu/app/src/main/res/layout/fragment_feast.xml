@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <RadioButton
+            android:id="@+id/taocan_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -22,6 +23,7 @@
             android:text="套餐"
             android:textColor="@drawable/yhsz_textcolor_selector"/>
         <RadioButton
+            android:id="@+id/caipi_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -50,6 +52,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <RadioButton
+                android:id="@+id/home_btn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -62,6 +65,7 @@
                 android:text="家庭"
                 android:textColor="@drawable/yhsz_textcolor_selector"/>
             <RadioButton
+                android:id="@+id/workmate_btn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -74,6 +78,7 @@
                 android:textColor="@drawable/yhsz_textcolor_selector"
                 android:text="同事"/>
             <RadioButton
+                android:id="@+id/friend_btn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -86,6 +91,7 @@
                 android:textColor="@drawable/yhsz_textcolor_selector"
                 android:text="好友"/>
             <RadioButton
+                android:id="@+id/birthday_btn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -98,6 +104,7 @@
                 android:text="生日"
                 android:textColor="@drawable/yhsz_textcolor_selector"/>
             <RadioButton
+                android:id="@+id/festival_btn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

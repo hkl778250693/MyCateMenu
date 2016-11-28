@@ -18,52 +18,82 @@
             android:alpha="0.7"
             android:layout_marginLeft="12dp"
             android:layout_marginRight="12dp"
-
             android:background="@drawable/login_editext_phone_bg"
             android:drawableLeft="@mipmap/login_phone"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="电话号码"
+            android:inputType="phone"
             android:paddingBottom="9dp"
             android:paddingLeft="10dp"
             android:paddingTop="9dp"
             android:textSize="15sp" />
 
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_marginBottom="15dp"
             android:layout_marginLeft="12dp"
             android:layout_marginRight="12dp"
             android:alpha="0.7"
-            android:background="@drawable/login_editext_phone_bg"
-            android:drawableLeft="@mipmap/login_password"
-            android:drawablePadding="8dp"
-            android:drawableRight="@mipmap/login_eye"
             android:gravity="center_vertical"
-            android:hint="密码"
-            android:paddingBottom="9dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="9dp"
-            android:textSize="15sp" />
+            android:background="@drawable/login_editext_phone_bg">
+            <EditText
+                android:id="@+id/edittext"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:drawableLeft="@mipmap/login_password"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:hint="密码"
+                android:inputType="textPassword"
+                android:paddingBottom="9dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="9dp"
+                android:textSize="15sp" />
+            <CheckBox
+                android:id="@+id/eye_btn"
+                android:layout_width="wrap_content"
+                android:button="@null"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_eye_selector"/>
+        </LinearLayout>
 
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_marginBottom="15dp"
             android:layout_marginLeft="12dp"
             android:layout_marginRight="12dp"
             android:alpha="0.7"
-            android:background="@drawable/login_editext_phone_bg"
-            android:drawableLeft="@mipmap/login_password"
-            android:drawablePadding="8dp"
-            android:drawableRight="@mipmap/login_eye"
             android:gravity="center_vertical"
-            android:hint="确认密码"
-            android:paddingBottom="9dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="9dp"
-            android:textSize="15sp" />
+            android:background="@drawable/login_editext_phone_bg">
+            <EditText
+                android:id="@+id/edittext1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:drawableLeft="@mipmap/login_password"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:hint="确认密码"
+                android:inputType="textPassword"
+                android:paddingBottom="9dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="9dp"
+                android:textSize="15sp" />
+            <CheckBox
+                android:id="@+id/eye1_btn"
+                android:layout_width="wrap_content"
+                android:button="@null"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_eye_selector"/>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -81,7 +111,6 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
-
                 android:drawableLeft="@mipmap/register_authcode"
                 android:drawablePadding="5dp"
                 android:gravity="center_vertical"
