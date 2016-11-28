@@ -9,7 +9,7 @@
         android:background="@color/yellow">
 
         <ImageView
-            android:id="@+id/back_btn"
+            android:id="@+id/my_order_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -26,7 +26,7 @@
             android:textSize="23sp" />
     </RelativeLayout>
     <ListView
-        android:id="@+id/my_order"
+        android:id="@+id/my_order_listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:dividerHeight="3dp"
