@@ -53,6 +53,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:drawableLeft="@mipmap/comments"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -61,6 +62,7 @@
                 android:textSize="16sp" />
 
             <TextView
+                android:drawableLeft="@mipmap/praise"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -69,6 +71,7 @@
                 android:textSize="16sp" />
 
             <TextView
+                android:drawableLeft="@mipmap/forwarding"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -77,6 +80,8 @@
                 android:textSize="16sp" />
 
             <TextView
+
+                android:drawableLeft="@mipmap/collection"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

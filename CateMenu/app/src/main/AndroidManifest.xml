@@ -42,6 +42,15 @@
         <activity android:name=".activity.WeekOrderActivity"/>
         <activity android:name=".activity.AttentionActivity"/>
         <activity android:name=".activity.SearchActivity"/>
+        <activity android:name=".activity.MadeDetailsActivity"/>
+        <activity android:name=".activity.SixinActivity"/>
+        <activity android:name=".activity.SearchResultActivity"/>
+        <activity android:name=".activity.SquarePublishActivity"/>
+        <activity android:name=".activity.SquareDiscussTopicActivity"/>
+        <activity android:name=".activity.SquareDiscussTopicUserCommentsActivity"/>
+        <activity android:name=".activity.ClassifyMeatActivity"/>
+        <activity android:name=".activity.UploadActivity"/>
+        <activity android:name=".activity.MyFoodOrderActivity"/>
     </application>
 
 </manifest>

@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 import com.example.administrator.catemenu.R;
 import com.example.administrator.catemenu.fragment.ClassifyFragment;
@@ -32,6 +33,7 @@ public class HomePageActivity extends Activity {
     FeastFragment feastFragment;
     SquareFragment squareFragment;
     LinearLayout linearLayout;
+    ImageView headimg;
     RadioButton homepageBtn;
     RadioButton classifyBtn;
     RadioButton shopBtn;
@@ -44,9 +46,14 @@ public class HomePageActivity extends Activity {
     RadioButton squarerb;
     ImageView moreImgview;
     ImageView headImageview;
-    ImageView searchImg;
+    ImageView searchImgs;
     LayoutInflater layoutInflater;
     PopupWindow popupWindow;
+    RadioButton integralBtn;
+    RadioButton myAttentionBtn;
+    RadioButton myUploadBtn;
+    RadioButton mySixinBtn;
+    RadioButton feedBackBtn;
     Intent intent;
 
     @Override
@@ -60,7 +67,8 @@ public class HomePageActivity extends Activity {
         shopBtn = (RadioButton) findViewById(R.id.rb_shop);
         feastBtn = (RadioButton) findViewById(R.id.rb_feast);
         squareBtn = (RadioButton) findViewById(R.id.rb_square);
-        searchImg = (ImageView) findViewById(R.id.search_img);
+        headimg= (ImageView) findViewById(R.id.head_imageview);
+        searchImgs = (ImageView) findViewById(R.id.search_imgs);
         homepagerb = (RadioButton) findViewById(R.id.rb_homepage);
         classifyrb = (RadioButton) findViewById(R.id.rb_classify);
         shoprb = (RadioButton) findViewById(R.id.rb_shop);
@@ -69,12 +77,13 @@ public class HomePageActivity extends Activity {
         moreImgview = (ImageView) findViewById(R.id.more_imgview);
         headImageview = (ImageView) findViewById(R.id.head_imageview);
 
+        headimg.setOnClickListener(clickListener);
         homepageBtn.setOnClickListener(clickListener);
         classifyBtn.setOnClickListener(clickListener);
         shopBtn.setOnClickListener(clickListener);
         feastBtn.setOnClickListener(clickListener);
         squareBtn.setOnClickListener(clickListener);
-        searchImg.setOnClickListener(clickListener);
+        searchImgs.setOnClickListener(clickListener);
         homepagerb.setOnClickListener(clickListener);
         classifyrb.setOnClickListener(clickListener);
         shoprb.setOnClickListener(clickListener);
@@ -110,11 +119,8 @@ public class HomePageActivity extends Activity {
                 case R.id.rb_shop:  //餐具控件
                     if (shopFragment==null){
                         shopFragment=new ShopFragment();
-                        FragmentManager fragmentManagerShop = getFragmentManager();
-                        FragmentTransaction fragmentTransactionShop = fragmentManagerShop.beginTransaction();
-                        fragmentTransactionShop.replace(R.id.ll,shopFragment);
-                        fragmentTransactionShop.commit();
                     }
+                    transaction.replace(R.id.ll,shopFragment);
                     break;
                 case R.id.rb_feast:
                     if (feastFragment==null){
@@ -132,13 +138,33 @@ public class HomePageActivity extends Activity {
                     morePopupWindow();
                     break;
                 case R.id.head_imageview:
-                    intent = new Intent(HomePageActivity.this,MineActivity.class);
+                    intent = new Intent(HomePageActivity.this,GuidepageLoginActivity.class);
                     startActivity(intent);
                     break;
-                case R.id.search_img:
+                case R.id.search_imgs:
                     intent = new Intent(HomePageActivity.this,SearchActivity.class);
                     startActivity(intent);
                     break;
+                case R.id.integral_btn:
+
+                    break;
+                case R.id.my_attention_btn:
+                    intent = new Intent(HomePageActivity.this,AttentionActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.my_upload_btn:
+                    intent = new Intent(HomePageActivity.this,UploadActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.my_sixin_btn:
+                    intent = new Intent(HomePageActivity.this,MinePrivateLetterActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.feed_back_btn:
+                    intent = new Intent(HomePageActivity.this,FeedBackActivity.class);
+                    startActivity(intent);
+                    break;
+
             }
             transaction.commit();
         }
@@ -156,6 +182,22 @@ public class HomePageActivity extends Activity {
     public void morePopupWindow(){
         layoutInflater = LayoutInflater.from(this);
         View contentView = layoutInflater.inflate(R.layout.activity_popup_more,null);
+
+        //找到对应控件id
+        integralBtn = (RadioButton) contentView.findViewById(R.id.integral_btn);
+        myAttentionBtn = (RadioButton) contentView.findViewById(R.id.integral_btn);
+        myUploadBtn = (RadioButton) contentView.findViewById(R.id.integral_btn);
+        mySixinBtn = (RadioButton) contentView.findViewById(R.id.integral_btn);
+        feedBackBtn = (RadioButton) contentView.findViewById(R.id.integral_btn);
+
+
+        //设置点击事件
+        integralBtn.setOnClickListener(clickListener);
+        myAttentionBtn.setOnClickListener(clickListener);
+        myUploadBtn.setOnClickListener(clickListener);
+        mySixinBtn.setOnClickListener(clickListener);
+        feedBackBtn.setOnClickListener(clickListener);
+
         popupWindow = new PopupWindow(contentView);
         popupWindow.setOutsideTouchable(true);
         popupWindow.setFocusable(true);

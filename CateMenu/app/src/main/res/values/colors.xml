@@ -17,4 +17,5 @@
     <color name="food_text_cheked_false_color">#6D6D6D</color>
     <color name="bright_black_color">#535353</color>
     <color name="Light_grey_color">#A7A7A7</color>
+    <color name="gray_bg1">#C9C9C9</color>
 </resources>

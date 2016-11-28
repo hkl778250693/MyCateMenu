@@ -43,80 +43,15 @@
             android:layout_marginBottom="40dp"
             android:layout_alignBottom="@+id/sixin_head_imageview"/>
     </RelativeLayout>
-    <LinearLayout
+    <ListView
+        android:id="@+id/mine_listview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="20dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:gravity="center_vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/shezhi"
-            android:drawableLeft="@mipmap/head_img1"
-            android:gravity="center_vertical"
-            android:textSize="18sp"
-            android:drawablePadding="10dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="暴走大事件，每周五更新"
-            android:layout_marginLeft="10dp"/>
-    </LinearLayout>
+        android:layout_height="wrap_content">
+    </ListView>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/gray_bg"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="20dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:gravity="center_vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/shezhi"
-            android:drawableLeft="@mipmap/head_img2"
-            android:gravity="center_vertical"
-            android:textSize="18sp"
-            android:drawablePadding="10dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="暴走大事件，每周五更新"
-            android:layout_marginLeft="10dp"/>
-    </LinearLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/gray_bg"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="20dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:gravity="center_vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/shezhi"
-            android:drawableLeft="@mipmap/head_img3"
-            android:gravity="center_vertical"
-            android:textSize="18sp"
-            android:drawablePadding="10dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="暴走大事件，每周五更新"
-            android:layout_marginLeft="10dp"/>
-    </LinearLayout>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"

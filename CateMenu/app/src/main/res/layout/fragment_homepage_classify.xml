@@ -33,6 +33,7 @@
                 android:paddingTop="8dp">
 
                 <RadioButton
+                    android:id="@+id/sucai_btn"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -51,17 +52,16 @@
                     android:button="@null"
                     android:drawableTop="@mipmap/huncai"
                     android:gravity="center"
-
                     android:text="@string/huncai"
                     android:textColor="@drawable/classify_radiobutton_color"
                     android:textSize="11sp" />
 
                 <RadioButton
+                    android:id="@+id/tangcai_btn"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@null"
-
                     android:drawableTop="@mipmap/tangcai"
                     android:gravity="center"
                     android:text="@string/tangcai"
@@ -69,12 +69,12 @@
                     android:textSize="11sp" />
 
                 <RadioButton
+                    android:id="@+id/dianxin_btn"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@null"
                     android:drawableTop="@mipmap/dainxin"
-
                     android:gravity="center"
                     android:text="@string/dianxin"
                     android:textColor="@drawable/classify_radiobutton_color"

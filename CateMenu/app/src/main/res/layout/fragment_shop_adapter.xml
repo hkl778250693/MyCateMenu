@@ -2,13 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
+
     <GridView
-        android:id="@+id/tiaoliao_gridview"
+        android:scrollbars="none"
+        android:dividerHeight="8dp"
+        android:divider="@android:color/white"
+        android:layout_marginTop="8dp"
+        android:id="@+id/shop_listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:numColumns="2"
-        >
+        android:numColumns="2">
+
     </GridView>
 </LinearLayout>

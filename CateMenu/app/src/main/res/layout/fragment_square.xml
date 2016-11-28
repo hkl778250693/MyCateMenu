@@ -13,7 +13,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-
                 <RadioButton
                     android:id="@+id/rb_square_discuss"
                     android:layout_width="0dp"
@@ -25,7 +24,6 @@
                     android:text="讨论"
                     android:textColor="@drawable/shopfragment_radiobutton_color"
                     android:textSize="18sp" />
-
 
                 <RadioButton
                     android:id="@+id/rb_square_video"
@@ -50,20 +48,16 @@
                     android:text="发布"
                     android:textColor="@drawable/shopfragment_radiobutton_color"
                     android:textSize="18sp" />
-
             </RadioGroup>
-
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#C9C9C9" />
-
+                android:background="@color/gray_bg1" />
             <LinearLayout
                 android:id="@+id/ll_square_fragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-
             </LinearLayout>
 
         </LinearLayout>

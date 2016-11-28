@@ -25,8 +25,8 @@ public class ChujuFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.supermarket_chuju_layout,null);
-        gridView = (GridView) view.findViewById(R.id.chuju_gridview);
+        View view = inflater.inflate(R.layout.activity_shop_rootlayout,null);
+        gridView = (GridView) view.findViewById(R.id.gridview);
         Activity activityChuju = getActivity();
         list = getData();
         ChujuAdapter chujuAdapter = new ChujuAdapter(activityChuju,list);

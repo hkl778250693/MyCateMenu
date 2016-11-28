@@ -25,8 +25,8 @@ public class TiaoliaoFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.supermarket_tiaoliao_layout,null);
-        gridView = (GridView) view.findViewById(R.id.tiaoliao_gridview);
+        View view = inflater.inflate(R.layout.activity_shop_rootlayout,null);
+        gridView = (GridView) view.findViewById(R.id.gridview);
         Activity activityTiaoliao = getActivity();
         list = getData();
         TiaoliaoAdapter tiaoliaoAdapter = new TiaoliaoAdapter(activityTiaoliao,list);

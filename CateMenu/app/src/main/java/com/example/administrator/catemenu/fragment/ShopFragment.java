@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -25,54 +26,65 @@ public class ShopFragment extends Fragment {
     ChujuFragment chujuFragment;
     CanjuFragment canjuFragment;
     TiaoliaoFragment tiaoliaoFragment;
+    LinearLayout shopLinearLayout;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.fragment_shop,null);
-        radioGroup = (RadioGroup) view.findViewById(R.id.shop_radioGroup);
 
         //找到radioButton相关控件
         canjuRadioButton = (RadioButton) view.findViewById(R.id.canju_radioButton);
         chujuRadioButton = (RadioButton) view.findViewById(R.id.chuju_radioButton);
         tiaoliaoRadioButton = (RadioButton) view.findViewById(R.id.tiaoliao_radioButton);
+        shopLinearLayout = (LinearLayout) view.findViewById(R.id.shop_linearLayout);
 
         //radioGroup设置点击事件
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId){
-                    case R.id.chuju_radioButton:       //厨具
-                        if (chujuFragment==null){
-                            chujuFragment = new ChujuFragment();
-                            FragmentManager fragmentManager = getFragmentManager();
-                            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.add(R.id.shop_linearLayout,chujuFragment);
-                            fragmentTransaction.commit();
-                        }
-                        break;
+        chujuRadioButton.setOnClickListener(clickListener);
+        canjuRadioButton.setOnClickListener(clickListener);
+        tiaoliaoRadioButton.setOnClickListener(clickListener);
 
-                    case R.id.canju_radioButton:       //餐具
-                        if (canjuFragment==null){
-                            canjuFragment = new CanjuFragment();
-                            FragmentManager fragmentManager = getFragmentManager();
-                            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.shop_linearLayout,canjuFragment);
-                            fragmentTransaction.commit();
-                        }
-                        break;
-                    case R.id.tiaoliao_radioButton:    //调料
-                        if (tiaoliaoFragment==null){
-                            tiaoliaoFragment = new TiaoliaoFragment();
-                            FragmentManager fragmentManager = getFragmentManager();
-                            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.shop_linearLayout,tiaoliaoFragment);
-                            fragmentTransaction.commit();
-                        }
-                        break;
-                }
-            }
-        });
+        chujuRadioButton.setChecked(true);
+        if(chujuRadioButton.isChecked()){
+            addHomepageFragment();
+        }
         return view;
+    }
+
+    View.OnClickListener clickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            switch (v.getId()){
+                case R.id.chuju_radioButton:       //厨具
+                    if (chujuFragment==null){
+                        chujuFragment = new ChujuFragment();
+                    }
+                    transaction.replace(R.id.shop_linearLayout,chujuFragment);
+                    break;
+                case R.id.canju_radioButton:       //餐具
+                    if (canjuFragment==null){
+                        canjuFragment = new CanjuFragment();
+                    }
+                    transaction.replace(R.id.shop_linearLayout,canjuFragment);
+                    break;
+                case R.id.tiaoliao_radioButton:    //调料
+                    if (tiaoliaoFragment==null){
+                        tiaoliaoFragment = new TiaoliaoFragment();
+                    }
+                    transaction.replace(R.id.shop_linearLayout,tiaoliaoFragment);
+                    break;
+            }
+            transaction.commit();
+        }
+    };
+
+    public void addHomepageFragment() {
+        chujuFragment = new ChujuFragment();
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.shop_linearLayout, chujuFragment);
+        fragmentTransaction.commit();
     }
 }

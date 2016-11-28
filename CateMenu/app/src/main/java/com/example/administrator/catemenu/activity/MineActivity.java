@@ -20,6 +20,8 @@ public class MineActivity extends Activity {
     TextView collectTv;
     TextView shareTv;
     TextView attentionTv;
+    TextView uploadTv;
+    TextView orderTv;
     Intent intent;
 
     @Override
@@ -27,6 +29,7 @@ public class MineActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mine);
 
+        //找到对应控件id
         mineBackBtn = (ImageView) findViewById(R.id.mine_back_btn);
         sixinTextview = (TextView) findViewById(R.id.sixin_textview);
         settingBtn = (TextView) findViewById(R.id.setting_btn);
@@ -35,7 +38,10 @@ public class MineActivity extends Activity {
         collectTv = (TextView) findViewById(R.id.collect_tv);
         shareTv = (TextView) findViewById(R.id.share_tv);
         attentionTv = (TextView) findViewById(R.id.attention_tv);
+        uploadTv = (TextView) findViewById(R.id.upload_tv);
+        orderTv = (TextView) findViewById(R.id.order_tv);
 
+        //设置点击事件
         mineBackBtn.setOnClickListener(clickListener);
         sixinTextview.setOnClickListener(clickListener);
         settingBtn.setOnClickListener(clickListener);
@@ -44,6 +50,8 @@ public class MineActivity extends Activity {
         collectTv.setOnClickListener(clickListener);
         shareTv.setOnClickListener(clickListener);
         attentionTv.setOnClickListener(clickListener);
+        uploadTv.setOnClickListener(clickListener);
+        orderTv.setOnClickListener(clickListener);
     }
 
     View.OnClickListener clickListener = new View.OnClickListener() {
@@ -82,6 +90,15 @@ public class MineActivity extends Activity {
                     intent = new Intent(MineActivity.this,AttentionActivity.class);
                     startActivity(intent);
                     break;
+                case R.id.upload_tv:
+                    intent = new Intent(MineActivity.this,UploadActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.order_tv:
+                    intent = new Intent(MineActivity.this,MyFoodOrderActivity.class);
+                    startActivity(intent);
+                    break;
+
             }
         }
     };

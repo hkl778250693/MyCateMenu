@@ -5,26 +5,28 @@
     android:orientation="vertical"
     android:background="@color/huncai_bg_gray">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@color/yellow"
-        android:padding="12dp"
-        android:gravity="center_vertical">
+        android:background="@color/yellow">
+
         <ImageView
+            android:id="@+id/back_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/back"/>
+            android:layout_alignParentLeft="true"
+            android:padding="11dp"
+            android:src="@mipmap/back" />
+
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="荤菜"
-            android:textSize="23sp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/huncai"
             android:textColor="@android:color/white"
-            android:gravity="center"/>
-    </LinearLayout>
+            android:textSize="23sp" />
+    </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

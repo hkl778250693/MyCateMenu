@@ -51,4 +51,13 @@
     <string name="my_uploading">我的上传</string>
     <string name="my_sixin">我的私信</string>
     <string name="my_feedback">意见反馈</string>
+    <string name="main_material">主料：</string>
+    <string name="search">搜索</string>
+    <string name="prepare_time">准备时间：</string>
+    <string name="made_time">制作时间：</string>
+    <string name="side_material">副料：</string>
+    <string name="notice">注：</string>
+    <string name="publisher">发布人：</string>
+    <string name="personal_signature">个性签名：</string>
+    <string name="upload">上传</string>
 </resources>

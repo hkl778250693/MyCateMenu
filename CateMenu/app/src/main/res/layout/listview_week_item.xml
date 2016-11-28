@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp"
-    android:gravity="center_vertical">
+    android:padding="10dp">
     <ImageView
+        android:id="@+id/head_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/paigu1"/>
@@ -32,35 +32,23 @@
                 android:text="@string/collect"
                 android:drawableLeft="@mipmap/collect"
                 android:gravity="center"
-                android:drawablePadding="5dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/collect"
-                android:drawableLeft="@mipmap/collect"
-                android:gravity="center"
-                android:layout_marginLeft="20dp"
-                android:drawablePadding="5dp" />
-                android:gravity="center"
-                android:drawableLeft="@mipmap/collect"
-                android:drawablePadding="10dp"
-                android:layout_marginRight="20dp"/>
+                android:drawablePadding="5dp"
+                android:layout_marginRight="20dp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="顶一个"
                 android:gravity="center"
                 android:drawableLeft="@mipmap/zan"
-                android:drawablePadding="10dp"
-                android:layout_marginRight="20dp"/>
+                android:drawablePadding="10dp"/>
         </LinearLayout>
         <TextView
+            android:id="@+id/content_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:lines="2"
-            android:text="分开都是开发商的开发的速度来说的啥地方了肯定舒服了收到了附近"/>
-            android:paddingRight="10dp"
-            android:text="看到数据库及第三方件附"/>
+            android:layout_marginTop="5dp"
+            android:text="分开都是开发商的开了肯定舒到了近"/>
+            android:paddingRight="10dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:textColor="@color/yellow"

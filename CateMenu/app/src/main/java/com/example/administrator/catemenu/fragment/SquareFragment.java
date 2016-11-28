@@ -32,7 +32,6 @@ public class SquareFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_square, null);
 
-
         llSquareFragment = (LinearLayout) view.findViewById(R.id.ll_square_fragment);
         discussBtn = (RadioButton) view.findViewById(R.id.rb_square_discuss);
         releaseBtn = (RadioButton) view.findViewById(R.id.rb_square_release);
