@@ -1,5 +1,7 @@
 package com.example.administrator.catemenu.activity;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 
 import android.app.FragmentManager;
@@ -14,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.administrator.catemenu.R;
@@ -22,6 +25,8 @@ import com.example.administrator.catemenu.fragment.FeastFragment;
 import com.example.administrator.catemenu.fragment.HomepageFragment;
 import com.example.administrator.catemenu.fragment.ShopFragment;
 import com.example.administrator.catemenu.fragment.SquareFragment;
+
+import java.util.ArrayList;
 
 /**
  * Created by Administrator on 2016/10/20.
@@ -55,7 +60,7 @@ public class HomePageActivity extends Activity {
     RadioButton mySixinBtn;
     RadioButton feedBackBtn;
     Intent intent;
-    Intent intent1;
+    RadioGroup radioGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,6 +141,7 @@ public class HomePageActivity extends Activity {
                     transaction.replace(R.id.ll,squareFragment);
                     break;
                 case R.id.more_imgview:
+                    startHomeMoreAnimation();
                     morePopupWindow();
                     break;
                 case R.id.head_imageview:
@@ -146,26 +152,7 @@ public class HomePageActivity extends Activity {
                     intent = new Intent(HomePageActivity.this,SearchActivity.class);
                     startActivity(intent);
                     break;
-                case R.id.integral_btn:
-                    intent = new Intent(HomePageActivity.this,FeedBackActivity.class);
-                    startActivity(intent);
-                    break;
-                case R.id.my_attention_btn:
-                    intent = new Intent(HomePageActivity.this,AttentionActivity.class);
-                    startActivity(intent);
-                    break;
-                case R.id.my_upload_btn:
-                    intent = new Intent(HomePageActivity.this,UploadActivity.class);
-                    startActivity(intent);
-                    break;
-                case R.id.my_sixin_btn:
-                    intent = new Intent(HomePageActivity.this,SixinActivity.class);
-                    startActivity(intent);
-                    break;
-                case R.id.feed_back_btn:
-                    intent = new Intent(HomePageActivity.this,FeedBackActivity.class);
-                    startActivity(intent);
-                    break;
+
             }
             transaction.commit();
         }
@@ -190,14 +177,36 @@ public class HomePageActivity extends Activity {
         myUploadBtn = (RadioButton) contentView.findViewById(R.id.integral_btn);
         mySixinBtn = (RadioButton) contentView.findViewById(R.id.integral_btn);
         feedBackBtn = (RadioButton) contentView.findViewById(R.id.integral_btn);
+        radioGroup = (RadioGroup) contentView.findViewById(R.id.radio_group);
 
         //设置点击事件
-        integralBtn.setOnClickListener(clickListener);
-        myAttentionBtn.setOnClickListener(clickListener);
-        myUploadBtn.setOnClickListener(clickListener);
-        mySixinBtn.setOnClickListener(clickListener);
-        feedBackBtn.setOnClickListener(clickListener);
-
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId){
+                    case R.id.integral_btn:
+                        intent = new Intent(HomePageActivity.this,FeedBackActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.my_attention_btn:
+                        intent = new Intent(HomePageActivity.this,AttentionActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.my_upload_btn:
+                        intent = new Intent(HomePageActivity.this,UploadActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.my_sixin_btn:
+                        intent = new Intent(HomePageActivity.this,SixinActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.feed_back_btn:
+                        intent = new Intent(HomePageActivity.this,FeedBackActivity.class);
+                        startActivity(intent);
+                        break;
+                }
+            }
+        });
         popupWindow = new PopupWindow(contentView);
         popupWindow.setOutsideTouchable(true);
         popupWindow.setFocusable(true);
@@ -206,6 +215,51 @@ public class HomePageActivity extends Activity {
         popupWindow.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
         popupWindow.setBackgroundDrawable(getResources().getDrawable(R.drawable.homepage_edittext_serch_shape));
         popupWindow.showAsDropDown(moreImgview,-180,10);
+    }
 
+    public void startHomeMoreAnimation(){
+        ObjectAnimator alphaAnimator =ObjectAnimator.ofFloat(moreImgview,"alpha",1.0F,0F,1.0F);
+        alphaAnimator.setDuration(4000);
+        alphaAnimator.setRepeatMode(alphaAnimator.REVERSE);
+        ObjectAnimator rotateAnimator =ObjectAnimator.ofFloat(moreImgview,"RotationY",0F,180F,0F);
+        rotateAnimator.setDuration(3000);
+        rotateAnimator.setRepeatMode(rotateAnimator.REVERSE);
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.play(alphaAnimator).with(rotateAnimator);
+        animatorSet.start();
+    }
+
+    public interface MyTouchListener {
+        public boolean onTouchEvent(MotionEvent event);
+    }
+
+    // 保存MyTouchListener接口的列表
+    private ArrayList<MyTouchListener> myTouchListeners = new ArrayList<MyTouchListener>();
+
+    /**
+     * 提供给Fragment通过getActivity()方法来注册自己的触摸事件的方法
+     * @param listener
+     */
+    public void registerMyTouchListener(MyTouchListener listener) {
+        myTouchListeners.add(listener);
+    }
+
+    /**
+     * 提供给Fragment通过getActivity()方法来取消注册自己的触摸事件的方法
+     * @param listener
+     */
+    public void unRegisterMyTouchListener(MyTouchListener listener) {
+        myTouchListeners.remove( listener );
+    }
+
+    /**
+     * 分发触摸事件给所有注册了MyTouchListener的接口
+     */
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        for (MyTouchListener listener : myTouchListeners) {
+            listener.onTouchEvent(ev);
+        }
+        return super.dispatchTouchEvent(ev);
     }
 }

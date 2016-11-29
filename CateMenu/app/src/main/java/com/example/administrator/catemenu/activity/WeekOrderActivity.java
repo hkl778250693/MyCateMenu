@@ -63,6 +63,7 @@ public class WeekOrderActivity extends Activity {
         //设置适配器
         WeekOrderAdapter weekOrderAdapter = new WeekOrderAdapter(this,weekOrderList);
         weekListview.setAdapter(weekOrderAdapter);
+        weekListview.setFocusable(true);
         weekListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
