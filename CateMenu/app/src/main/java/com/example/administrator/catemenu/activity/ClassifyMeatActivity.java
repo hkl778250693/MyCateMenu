@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
+
+import com.MyApplication;
 import com.example.administrator.catemenu.R;
 import com.example.administrator.catemenu.adapter.MeatItemAdapter;
 import com.example.administrator.catemenu.fragment.ClassifyFragment;
@@ -45,8 +47,7 @@ public class ClassifyMeatActivity extends Activity {
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.back_btn:
-                    intent = new Intent(ClassifyMeatActivity.this, HomePageActivity.class);
-                    startActivity(intent);
+                    finish();
                     break;
             }
         }

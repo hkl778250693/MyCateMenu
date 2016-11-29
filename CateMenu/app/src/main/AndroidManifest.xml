@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".activity.GuideActivity">
+        <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,8 +18,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.MainActivity"/>
         <activity android:name=".activity.HomePageActivity"/>
+        <activity android:name=".activity.MainActivity"/>
+        <activity android:name=".activity.GuideActivity" />
         <activity android:name=".activity.RegisterActivity"/>
         <activity android:name=".activity.MinePrivateLetterActivity"/>
         <activity android:name=".activity.LoginThirdpartActivity"/>
