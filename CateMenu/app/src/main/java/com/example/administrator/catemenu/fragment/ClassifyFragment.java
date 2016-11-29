@@ -20,35 +20,27 @@ import android.widget.ViewFlipper;
 
 import com.example.administrator.catemenu.R;
 import com.example.administrator.catemenu.activity.ClassifyMeatActivity;
+<<<<<<< HEAD
 import com.example.administrator.catemenu.activity.TodayRecommendActivity;
 =======
 >>>>>>> bab28afb2ff10ee6f72a21ca05a56d2dea550511
+=======
+
+>>>>>>> 02327ead80e2f4d006e92d80e2c53d66ebcad02c
 import com.example.administrator.catemenu.activity.HomePageActivity;
 
 import java.util.ArrayList;
 import java.util.List;
-<<<<<<< HEAD
 
-=======
->>>>>>> bab28afb2ff10ee6f72a21ca05a56d2dea550511
 
 /**
  * Created by Administrator on 2016/11/11.
  */
 public class ClassifyFragment extends Fragment implements HomePageActivity.MyTouchListener{
     RadioButton huncaiBtn;
-<<<<<<< HEAD
-
-    RadioButton sucai_btn;
-    RadioButton tangcai_btn;
-    RadioButton dianxin_btn;
-
-=======
->>>>>>> bab28afb2ff10ee6f72a21ca05a56d2dea550511
     RadioButton sucaiBtn;
     RadioButton tangcaiBtn;
     RadioButton dianxinBtn;
-    Intent intent;
     Activity activity;
     ViewFlipper viewFlipper;
     GestureDetector gestureDetector;
@@ -57,15 +49,12 @@ public class ClassifyFragment extends Fragment implements HomePageActivity.MyTou
     RadioButton radioBtn2;
     RadioButton radioBtn3;
     RadioButton radioBtn4;
+    Intent intent;
     View view;
     View view1;
     TextView textView;
     List<View> viewList = new ArrayList<View>();
     ImageView bannerImg;
-<<<<<<< HEAD
-
-=======
->>>>>>> bab28afb2ff10ee6f72a21ca05a56d2dea550511
 
     @Nullable
     @Override
@@ -138,10 +127,7 @@ public class ClassifyFragment extends Fragment implements HomePageActivity.MyTou
                 }
             }
         });
-<<<<<<< HEAD
 
-=======
->>>>>>> bab28afb2ff10ee6f72a21ca05a56d2dea550511
 
         for(int i=0;i<4;i++){
             view1 = activity.getLayoutInflater().inflate(R.layout.view_flipper_item,null);
@@ -210,20 +196,12 @@ public class ClassifyFragment extends Fragment implements HomePageActivity.MyTou
         public void onClick(View view) {
             switch (view.getId()){
                 case R.id.sucai_btn:
-<<<<<<< HEAD
-
-=======
->>>>>>> bab28afb2ff10ee6f72a21ca05a56d2dea550511
                     intent = new Intent(activity, ClassifyMeatActivity.class);
                     startActivity(intent);
                     break;
                 case R.id.huncai_btn:
                     intent = new Intent(activity, ClassifyMeatActivity.class);
                     startActivity(intent);
-<<<<<<< HEAD
-
-=======
->>>>>>> bab28afb2ff10ee6f72a21ca05a56d2dea550511
                     break;
                 case R.id.tangcai_btn:
                     intent = new Intent(activity, ClassifyMeatActivity.class);
