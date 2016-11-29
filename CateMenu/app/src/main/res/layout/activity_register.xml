@@ -12,7 +12,6 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/et_phonenumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
@@ -135,7 +134,6 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/tv_zhuce"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="12dp"
