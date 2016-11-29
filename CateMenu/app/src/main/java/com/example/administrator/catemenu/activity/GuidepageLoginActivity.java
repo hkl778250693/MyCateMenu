@@ -6,14 +6,19 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.administrator.catemenu.R;
+
+
+
 
 /**
  * Created by Administrator on 2016/11/8.
  */
 public class GuidepageLoginActivity extends Activity {
+
     private TextView guidepagehade;
     private Button loginBtn;
     private Button registeredBtn;
@@ -25,6 +30,8 @@ public class GuidepageLoginActivity extends Activity {
 
         loginBtn= (Button) findViewById(R.id.login_btn);
         registeredBtn= (Button) findViewById(R.id.registered_btn);
+
+
 
         registeredBtn.setOnClickListener(onClickListener);
         loginBtn.setOnClickListener(onClickListener);
@@ -51,4 +58,5 @@ public class GuidepageLoginActivity extends Activity {
         Typeface typeface=Typeface.createFromAsset(getAssets(),"fonts/fzhzgbjw--gb1.TTF");
         guidepagehade.setTypeface(typeface);
     }
+
 }
