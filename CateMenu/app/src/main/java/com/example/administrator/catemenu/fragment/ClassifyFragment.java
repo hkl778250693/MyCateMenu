@@ -20,11 +20,22 @@ import android.widget.ViewFlipper;
 
 import com.example.administrator.catemenu.R;
 import com.example.administrator.catemenu.activity.ClassifyMeatActivity;
+<<<<<<< HEAD
 import com.example.administrator.catemenu.activity.TodayRecommendActivity;
+=======
+<<<<<<< HEAD
+import com.example.administrator.catemenu.activity.TodayRecommendActivity;
+=======
+>>>>>>> bab28afb2ff10ee6f72a21ca05a56d2dea550511
+=======
+
+>>>>>>> 02327ead80e2f4d006e92d80e2c53d66ebcad02c
+>>>>>>> 333c2f43ac814b5451a79ba4ae9f8fcfddaa680f
 import com.example.administrator.catemenu.activity.HomePageActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * Created by Administrator on 2016/11/11.
@@ -37,7 +48,6 @@ public class ClassifyFragment extends Fragment implements HomePageActivity.MyTou
     RadioButton sucaiBtn;
     RadioButton tangcaiBtn;
     RadioButton dianxinBtn;
-    Intent intent;
     Activity activity;
     ViewFlipper viewFlipper;
     GestureDetector gestureDetector;
@@ -46,6 +56,7 @@ public class ClassifyFragment extends Fragment implements HomePageActivity.MyTou
     RadioButton radioBtn2;
     RadioButton radioBtn3;
     RadioButton radioBtn4;
+    Intent intent;
     View view;
     View view1;
     TextView textView;
@@ -123,6 +134,7 @@ public class ClassifyFragment extends Fragment implements HomePageActivity.MyTou
                 }
             }
         });
+
 
         for(int i=0;i<4;i++){
             view1 = activity.getLayoutInflater().inflate(R.layout.view_flipper_item,null);

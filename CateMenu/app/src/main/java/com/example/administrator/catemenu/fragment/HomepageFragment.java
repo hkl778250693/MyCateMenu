@@ -199,7 +199,73 @@ public class HomepageFragment extends Fragment implements View.OnClickListener,H
         return view;
     }
 
+<<<<<<< HEAD
 
+=======
+    /*//加载banner的数据
+    public void intopager() {
+        imgBanner = new ArrayList<ImageView>();
+        for (int i = 0; i < 3; i++) {
+            ImageView imageView = new ImageView(getActivity());
+            imageView.setLayoutParams(new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+            imageView.setImageResource(R.mipmap.banner);
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imageView.setId(1000 + i);
+            imgBanner.add(imageView);
+        }
+        ImageAdapter imageAdapter = new ImageAdapter(imgBanner);
+        viewPager.setAdapter(imageAdapter);
+//        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+//            @Override
+//            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+//
+//            }
+//            @Override
+//            public void onPageSelected(int position) {
+//
+//            }
+//            @Override
+//            public void onPageScrollStateChanged(int state) {
+//                switch (state) {
+//                    case ViewPager.SCROLL_STATE_DRAGGING:
+//                        handler.sendEmptyMessage(ImageHandler.MSG_KEEP_SILENT);
+//                        break;
+//                    case ViewPager.SCROLL_STATE_IDLE:
+//                        handler.sendEmptyMessageDelayed(ImageHandler.MSG_UPDATE_IMAGE, ImageHandler.MSG_DELAY);
+//                        break;
+//                    default:
+//                        break;
+//                }
+//            }
+//        });
+//        viewPager.setCurrentItem(imgBanner.size() / 2);//默认在中间，使用户看不到边界
+//        //开始轮播效果
+//        handler.sendEmptyMessageDelayed(ImageHandler.MSG_UPDATE_IMAGE, ImageHandler.MSG_DELAY);
+    }
+
+    //banner的适配器重写
+    //viewpage的pagerAdapter
+    private class ImageAdapter extends PagerAdapter {
+        private ArrayList<ImageView> imgBanner;
+
+        public ImageAdapter(ArrayList<ImageView> imgBanner) {
+            this.imgBanner = imgBanner;
+        }
+
+        @Override
+        public boolean isViewFromObject(View view, Object object) {
+            return view == object;
+        }
+
+        @Override
+        public int getCount() {//设置图片的的返回条数
+            return imgBanner.size();
+        }
+
+        @Override
+        public void destroyItem(ViewGroup container, int position, Object object) {
+        }*/
+>>>>>>> 333c2f43ac814b5451a79ba4ae9f8fcfddaa680f
 
 
     @Override
