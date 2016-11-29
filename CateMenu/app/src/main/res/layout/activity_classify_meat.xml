@@ -3,6 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     android:background="@color/huncai_bg_gray">
 
     <RelativeLayout
@@ -98,13 +100,10 @@
             </RelativeLayout>
         </LinearLayout>
     </RelativeLayout>
-
     <ListView
-        android:id="@+id/huncai_listview"
+        android:id="@+id/listview"
         android:dividerHeight="8dp"
+        android:divider="@android:color/white"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </ListView>
-
+        android:layout_height="wrap_content"/>
 </LinearLayout>
