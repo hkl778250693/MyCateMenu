@@ -45,7 +45,7 @@ public class CanjuAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView==null){
-            convertView = layoutInflater.inflate(R.layout.supermarket_canju_item_layout,null);
+            convertView = layoutInflater.inflate(R.layout.listview_shop_canju_item_layout,null);
         }
         ImageView imageView = (ImageView) convertView.findViewById(R.id.canju1_imageview);
         TextView textView = (TextView) convertView.findViewById(R.id.canju1_name);

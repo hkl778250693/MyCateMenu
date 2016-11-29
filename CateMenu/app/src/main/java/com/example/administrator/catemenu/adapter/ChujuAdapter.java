@@ -45,7 +45,7 @@ public class ChujuAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView==null){
-            convertView=layoutInflater.inflate(R.layout.supermarket_chuju_item_layout,null);
+            convertView=layoutInflater.inflate(R.layout.listview_shop_chuju_item_layout,null);
         }
         ImageView imageView = (ImageView) convertView.findViewById(R.id.chuju_imageview);
         TextView textViewName = (TextView) convertView.findViewById(R.id.chuju_name);
