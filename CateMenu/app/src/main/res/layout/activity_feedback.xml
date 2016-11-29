@@ -11,6 +11,7 @@
         android:background="@color/yellow">
 
         <ImageView
+            android:id="@+id/back_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -51,6 +52,7 @@
         android:text="请输入你要反馈的内容..." />
 
     <Button
+        android:id="@+id/commit_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="11dp"
