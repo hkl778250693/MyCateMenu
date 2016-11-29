@@ -58,21 +58,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/yellow"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:layout_margin="10dp">
-
-            <EditText
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:gravity="center"
+        >
+            <ScrollView
                 android:layout_width="0dp"
-                android:background="@drawable/square_discuss_topic_edittext_breakgrounds"
-                android:layout_height="wrap_content"
-                android:padding="6dp"
-                android:layout_weight="1" />
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:fillViewport="true"
+                >
+                <EditText
+                    android:id="@+id/square_discuss_edittext"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/square_discuss_topic_edittext_breakgrounds"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    />
+            </ScrollView>
             <TextView
                 android:background="@null"
                 android:paddingRight="20dp"
@@ -82,6 +85,5 @@
                 android:textSize="18sp"
                 android:textColor="@android:color/white"
                 android:text="评论"/>
-        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

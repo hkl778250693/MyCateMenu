@@ -4,65 +4,82 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewParent;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import com.example.administrator.catemenu.R;
+import com.example.administrator.catemenu.activity.HomePageActivity;
 import com.example.administrator.catemenu.activity.SeasonRecommendActivity;
 import com.example.administrator.catemenu.activity.TodayRecommendActivity;
 import com.example.administrator.catemenu.activity.WeekOrderActivity;
 
 
-import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2016/11/11.
  */
-public class HomepageFragment extends Fragment implements View.OnClickListener {
+public class HomepageFragment extends Fragment implements View.OnClickListener,HomePageActivity.MyTouchListener{
     private RadioButton breakfast;
     private RadioButton desssert;
     private RadioButton dinner;
     private RadioButton lunch;
-    ViewPager viewPager;
     RelativeLayout todayRecommend;
     RelativeLayout weekOrder;
     RelativeLayout season;
     Intent intent;
     Activity activity;
-
-    private ArrayList<ImageView> imgBanner;
-    private Handler handler;
+    ViewFlipper viewFlipper;
+    GestureDetector gestureDetector;
+    RadioGroup radioGroup;
+    RadioButton radioBtn1;
+    RadioButton radioBtn2;
+    RadioButton radioBtn3;
+    RadioButton radioBtn4;
+    View view;
+    View view1;
+    TextView textView;
+    List<View> viewList = new ArrayList<View>();
+    ImageView bannerImg;
 
     @Nullable
     @Override//加载页面
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_homepage, null);
+        view = inflater.inflate(R.layout.fragment_homepage, null);
+
+        //找到相应的控件id
         breakfast = (RadioButton) view.findViewById(R.id.btn_breakfast);
         desssert = (RadioButton) view.findViewById(R.id.btn_dessert);
         dinner = (RadioButton) view.findViewById(R.id.btn_dinner);
         lunch = (RadioButton) view.findViewById(R.id.btn_lunch);
-        viewPager = (ViewPager) view.findViewById(R.id.homepage_viewpager);
-
-        intopager();
-        viewPager = (ViewPager) view.findViewById(R.id.viewpager);
         todayRecommend = (RelativeLayout) view.findViewById(R.id.today_recommend);
         weekOrder = (RelativeLayout) view.findViewById(R.id.week_order);
         season = (RelativeLayout) view.findViewById(R.id.season);
-        activity = getActivity();
+        viewFlipper = (ViewFlipper) view.findViewById(R.id.flipper);
+        gestureDetector = new GestureDetector(activity,onGestureListener);
+        radioGroup = (RadioGroup) view.findViewById(R.id.radio_group);
+        radioBtn1 = (RadioButton) view.findViewById(R.id.radio_btn1);
+        radioBtn2 = (RadioButton) view.findViewById(R.id.radio_btn2);
+        radioBtn3 = (RadioButton) view.findViewById(R.id.radio_btn3);
+        radioBtn4 = (RadioButton) view.findViewById(R.id.radio_btn4);
 
+        activity = getActivity();
+        ((HomePageActivity)activity).registerMyTouchListener(this);
+
+        //设置点击事件
         breakfast.setChecked(true);
         breakfast.setOnClickListener(this);
         desssert.setOnClickListener(this);
@@ -71,6 +88,7 @@ public class HomepageFragment extends Fragment implements View.OnClickListener {
         todayRecommend.setOnClickListener(this);
         weekOrder.setOnClickListener(this);
         season.setOnClickListener(this);
+<<<<<<< HEAD
         return view;
     }
     //加载banner的数据
@@ -136,91 +154,117 @@ public class HomepageFragment extends Fragment implements View.OnClickListener {
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
         }
+=======
+>>>>>>> 813a57416c052df2083b1a9c5946fa3bb811c7ac
 
-        @Override
-        public Object instantiateItem(ViewGroup container, int position) {//找到对应的下标图片并显示出来
-            position %= imgBanner.size();
-            if (position < 0) {
-                position = imgBanner.size() + position;
+        //点击事件
+        radioBtn1.setChecked(true);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId){
+                    case R.id.radio_btn1:
+                        if(viewFlipper.isFlipping()){
+                            viewFlipper.stopFlipping();
+                            viewFlipper.setDisplayedChild(0);
+                            viewFlipper.startFlipping();
+                        }else {
+                            viewFlipper.setDisplayedChild(0);
+                        }
+                        break;
+                    case R.id.radio_btn2:
+                        if(viewFlipper.isFlipping()){
+                            viewFlipper.stopFlipping();
+                            viewFlipper.setDisplayedChild(1);
+                            viewFlipper.startFlipping();
+                        }else {
+                            viewFlipper.setDisplayedChild(1);
+                        }
+                        break;
+                    case R.id.radio_btn3:
+                        if(viewFlipper.isFlipping()){
+                            viewFlipper.stopFlipping();
+                            viewFlipper.setDisplayedChild(2);
+                            viewFlipper.startFlipping();
+                        }else {
+                            viewFlipper.setDisplayedChild(2);
+                        }
+                        break;
+                    case R.id.radio_btn4:
+                        if(viewFlipper.isFlipping()){
+                            viewFlipper.stopFlipping();
+                            viewFlipper.setDisplayedChild(3);
+                            viewFlipper.startFlipping();
+                        }else {
+                            viewFlipper.setDisplayedChild(3);
+                        }
+                        break;
+                    default:
+                        break;
+                }
             }
-            ImageView iv = imgBanner.get(position);
-            ViewParent vp = iv.getParent();
-            if (vp != null) {
-                ViewGroup parent = (ViewGroup) vp;
-                parent.removeView(iv);
-            }
-            container.addView(iv);
+        });
 
-            return iv;
+        for(int i=0;i<4;i++){
+            view1 = activity.getLayoutInflater().inflate(R.layout.view_flipper_item,null);
+            if(i == 0){
+                textView = (TextView) view1.findViewById(R.id.name_tv);
+                bannerImg = (ImageView) view1.findViewById(R.id.banner_img);
+                textView.setText("蓝莓");
+                bannerImg.setImageResource(R.mipmap.banner);
+                viewFlipper.addView(view1);
+            }else if(i == 1){
+                textView = (TextView) view1.findViewById(R.id.name_tv);
+                bannerImg = (ImageView) view1.findViewById(R.id.banner_img);
+                textView.setText("留香排骨");
+                bannerImg.setImageResource(R.mipmap.liuxiangpaigu);
+                viewFlipper.addView(view1);
+            }else if(i == 2){
+                textView = (TextView) view1.findViewById(R.id.name_tv);
+                bannerImg = (ImageView) view1.findViewById(R.id.banner_img);
+                textView.setText("蒜子鳝段");
+                bannerImg.setImageResource(R.mipmap.banner2);
+                viewFlipper.addView(view1);
+            }else {
+                textView = (TextView) view1.findViewById(R.id.name_tv);
+                bannerImg = (ImageView) view1.findViewById(R.id.banner_img);
+                textView.setText("烤三文鱼");
+                bannerImg.setImageResource(R.mipmap.kswy);
+                viewFlipper.addView(view1);
+            }
+            textView.setTag(i);
+            view1.setTag(i+5);
+            viewList.add(view1);
         }
-    }
-
-    private static class ImageHandler extends Handler {
-
-        /**
-         * 请求更新显示的View。
-         */
-        protected static final int MSG_UPDATE_IMAGE = 1;
-        /**
-         * 请求暂停轮播。
-         */
-        protected static final int MSG_KEEP_SILENT = 2;
-        /**
-         * 请求恢复轮播。
-         */
-        protected static final int MSG_BREAK_SILENT = 3;
-        /**
-         * 记录最新的页号，当用户手动滑动时需要记录新页号，否则会使轮播的页面出错。
-         * 例如当前如果在第一页，本来准备播放的是第二页，而这时候用户滑动到了末页，
-         * 则应该播放的是第一页，如果继续按照原来的第二页播放，则逻辑上有问题。
-         */
-        protected static final int MSG_PAGE_CHANGED = 4;
-
-        //轮播间隔时间  
-        protected static final long MSG_DELAY = 3000;
-
-        //使用弱引用避免Handler泄露.这里的泛型参数可以不是Activity，也可以是Fragment等  
-        private WeakReference<HomepageFragment> weakReference;
-        private int currentItem = 0;
-
-        protected ImageHandler(WeakReference<HomepageFragment> wk) {
-            weakReference = wk;
-        }
-
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            Log.i("handleMessage", "receive message " + msg.what);
-            HomepageFragment fragment = weakReference.get();
-            if (fragment == null) {
-                //Activity已经回收，无需再处理UI了  
-                return;
+        viewFlipper.setFlipInterval(3000);
+        viewFlipper.startFlipping();
+        viewFlipper.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                TextView textView1 = (TextView) viewFlipper.getCurrentView().findViewById(R.id.name_tv);
+                if(viewFlipper.getCurrentView() instanceof LinearLayout){
+                    //当图片是第一张的时候，圆圈相应跳转
+                    Log.i("setTag","setTag"+textView1.getTag());
+                    switch ((int)textView1.getTag()){
+                        case 0:
+                            radioBtn1.setChecked(true);
+                            break;
+                        case 1:
+                            radioBtn2.setChecked(true);
+                            break;
+                        case 2:
+                            radioBtn3.setChecked(true);
+                            break;
+                        case 3:
+                            radioBtn4.setChecked(true);
+                            break;
+                        default:
+                            break;
+                    }
+                }
             }
-            //检查消息队列并移除未发送的消息，这主要是避免在复杂环境下消息出现重复等问题。  
-            if (fragment.handler.hasMessages(MSG_UPDATE_IMAGE)) {
-                fragment.handler.removeMessages(MSG_UPDATE_IMAGE);
-            }
-            switch (msg.what) {
-                case MSG_UPDATE_IMAGE:
-                    currentItem++;
-                    fragment.viewPager.setCurrentItem(currentItem);
-                    //准备下次播放  
-                    fragment.handler.sendEmptyMessageDelayed(MSG_UPDATE_IMAGE, MSG_DELAY);
-                    break;
-                case MSG_KEEP_SILENT:
-                    //只要不发送消息就暂停了  
-                    break;
-                case MSG_BREAK_SILENT:
-                    fragment.handler.sendEmptyMessageDelayed(MSG_UPDATE_IMAGE, MSG_DELAY);
-                    break;
-                case MSG_PAGE_CHANGED:
-                    //记录当前的页号，避免播放的时候页面显示不正确。  
-                    currentItem = msg.arg1;
-                    break;
-                default:
-                    break;
-            }
-        }
+        });
+        return view;
     }
 
     @Override
@@ -268,4 +312,63 @@ public class HomepageFragment extends Fragment implements View.OnClickListener {
                 break;
         }
     }
+
+    //gestureDetector的点击事件
+    GestureDetector.OnGestureListener onGestureListener = new GestureDetector.OnGestureListener() {
+        @Override
+        public boolean onDown(MotionEvent e) {//down事件
+            Log.i("onDown","onDown======");
+            return false;
+        }
+
+        @Override
+        public void onShowPress(MotionEvent e) {//按事件
+            Log.i("onShowPress","onShowPress======");
+        }
+
+        @Override
+        public boolean onSingleTapUp(MotionEvent e) {//单次点击up事件
+            Log.i("onSingleTapUp","onSingleTapUp======");
+            return false;
+        }
+
+        @Override//滚动事件       起始位置        结束位置    两个位置之间X方向的距离 | Y方向的距离
+        public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+            Log.i("onScroll","onScroll======");
+            return false;
+        }
+
+        @Override
+        public void onLongPress(MotionEvent e) {//长按事件
+            Log.i("onLongPress","onLongPress======");
+        }
+
+        @Override//滑动事件       起始位置         结束位置         X滑动的速度     Y滑动的速度
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+           /* e1.getX();
+            e1.getY();
+            e2.getX();
+            e2.getY();
+            通过e的X的差值的正负，判断方向是左还是右 */
+
+            if(e1.getX() > e2.getX()){
+                viewFlipper.stopFlipping();
+                viewFlipper.showPrevious();
+                viewFlipper.startFlipping();
+            }else if(e1.getX() < e2.getX()){
+                viewFlipper.stopFlipping();
+                viewFlipper.showNext();
+                viewFlipper.startFlipping();
+            }
+            Log.i("onFling","onFling======");
+            return false;
+        }
+    };
+
+    //重写OnTouchEvent点击事件
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return gestureDetector.onTouchEvent(event);
+    }
+
 }

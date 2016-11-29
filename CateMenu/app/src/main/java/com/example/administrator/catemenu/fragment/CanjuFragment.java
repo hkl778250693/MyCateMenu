@@ -41,6 +41,8 @@ public class CanjuFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        gridView.setVerticalScrollBarEnabled(false);
+        gridView.setOverScrollMode(View.OVER_SCROLL_NEVER);
         return view;
     }
     //餐具数据源
