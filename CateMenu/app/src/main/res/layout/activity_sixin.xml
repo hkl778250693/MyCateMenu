@@ -45,13 +45,20 @@
             android:orientation="horizontal"
             android:layout_margin="10dp"
             >
-            <EditText
-                android:id="@+id/sixin_edittext"
+            <ScrollView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_weight="1"
-                android:background="@drawable/sixin_edittext"
-                />
+                android:fillViewport="true"
+                >
+                <EditText
+                    android:id="@+id/sixin_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sixin_edittext"
+                    android:paddingLeft="5dp"
+                    />
+            </ScrollView>
             <TextView
                 android:id="@+id/fasong_textview"
                 android:layout_width="wrap_content"
@@ -60,6 +67,7 @@
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:layout_marginLeft="5dp"
+                android:layout_gravity="center"
                 />
         </LinearLayout>
         <LinearLayout

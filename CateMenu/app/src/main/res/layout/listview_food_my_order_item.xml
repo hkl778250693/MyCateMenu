@@ -53,21 +53,35 @@
                     android:layout_marginTop="12dp"
                     >
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="￥："
+                        android:textSize="18sp"
+                        android:textColor="@color/red"
+                        />
+                    <TextView
                         android:id="@+id/order_price"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="￥：25.0"
+                        android:text="25.0"
                         android:textSize="18sp"
                         android:textColor="#FF3A3A"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="× "
+                        android:textColor="@color/red"
+                        android:textSize="18sp"
                         />
                     <TextView
                         android:id="@+id/order_number"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="× 3"
+                        android:text="3"
                         android:textSize="18sp"
-                        android:textColor="#FF3A3A"
+                        android:textColor="@color/red"
                         />
                 </LinearLayout>
                 <LinearLayout
@@ -84,6 +98,7 @@
                         android:textSize="18sp"
                         />
                     <TextView
+                        android:id="@+id/order_state"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="已支付"
