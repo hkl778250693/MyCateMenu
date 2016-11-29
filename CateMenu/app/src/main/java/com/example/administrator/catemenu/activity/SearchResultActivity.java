@@ -41,6 +41,7 @@ public class SearchResultActivity extends Activity {
             }
         });
     }
+
     public List<SearchResult> getData(){
         list = new ArrayList<>();
         for (int i=0;i<5;i++){
