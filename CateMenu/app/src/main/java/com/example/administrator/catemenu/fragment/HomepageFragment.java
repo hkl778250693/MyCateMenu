@@ -199,6 +199,9 @@ public class HomepageFragment extends Fragment implements View.OnClickListener,H
         return view;
     }
 
+
+
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
