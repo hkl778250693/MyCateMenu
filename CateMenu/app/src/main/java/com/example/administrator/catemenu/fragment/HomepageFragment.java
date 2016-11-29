@@ -78,7 +78,7 @@ public class HomepageFragment extends Fragment implements View.OnClickListener {
         imgBanner = new ArrayList<ImageView>();
         for (int i = 0; i < 3; i++) {
             ImageView imageView = new ImageView(getActivity());
-            imageView.setLayoutParams(new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+            imageView.setLayoutParams(new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             imageView.setImageResource(R.mipmap.banner);
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setId(1000 + i);

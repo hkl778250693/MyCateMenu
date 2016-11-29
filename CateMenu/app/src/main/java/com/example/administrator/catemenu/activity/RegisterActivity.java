@@ -43,7 +43,7 @@ public class RegisterActivity extends Activity {
                 case R.id.eye_btn:
                     if(eyeBtn.isChecked()){
                         edittext.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                    }else{
+                    }else if (eyeBtn.isChecked()){
                         edittext.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
                     }
                     break;

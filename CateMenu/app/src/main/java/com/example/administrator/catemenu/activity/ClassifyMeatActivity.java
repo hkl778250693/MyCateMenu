@@ -17,7 +17,7 @@ public class ClassifyMeatActivity extends Activity {
     List<MeatItem> meatItemList = new ArrayList<MeatItem>();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_classify_meat);
 

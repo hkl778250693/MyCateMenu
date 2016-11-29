@@ -12,6 +12,7 @@ import android.widget.RadioButton;
 
 import com.example.administrator.catemenu.R;
 import com.example.administrator.catemenu.activity.ClassifyMeatActivity;
+import com.example.administrator.catemenu.activity.TodayRecommendActivity;
 
 /**
  * Created by Administrator on 2016/11/11.
@@ -21,8 +22,6 @@ public class ClassifyFragment extends Fragment {
     RadioButton sucai_btn;
     RadioButton tangcai_btn;
     RadioButton dianxin_btn;
-    Intent intent;
-    Activity activity;
 
     @Nullable
     @Override
@@ -35,12 +34,17 @@ public class ClassifyFragment extends Fragment {
         dianxin_btn = (RadioButton) view.findViewById(R.id.dianxin_btn);
 
         //设置点击事件
-        huncaiBtn.setOnClickListener(clickListener);
+        huncaiBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ClassifyMeatActivity.class);
+                startActivity(intent);
+            }
+        });
         sucai_btn.setOnClickListener(clickListener);
         tangcai_btn.setOnClickListener(clickListener);
         dianxin_btn.setOnClickListener(clickListener);
 
-        activity = getActivity();
 
         return view;
     }
@@ -49,10 +53,6 @@ public class ClassifyFragment extends Fragment {
         @Override
         public void onClick(View view) {
             switch (view.getId()){
-                case R.id.huncai_btn:
-                    intent = new Intent(activity, ClassifyMeatActivity.class);
-                    startActivity(intent);
-                    break;
                 case R.id.sucai_btn:
                     break;
                 case R.id.tangcai_btn:
