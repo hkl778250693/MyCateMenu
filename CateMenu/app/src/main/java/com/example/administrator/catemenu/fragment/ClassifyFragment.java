@@ -20,25 +20,20 @@ import android.widget.ViewFlipper;
 
 import com.example.administrator.catemenu.R;
 import com.example.administrator.catemenu.activity.ClassifyMeatActivity;
-<<<<<<< HEAD
 import com.example.administrator.catemenu.activity.TodayRecommendActivity;
-=======
 import com.example.administrator.catemenu.activity.HomePageActivity;
 
 import java.util.ArrayList;
 import java.util.List;
->>>>>>> 813a57416c052df2083b1a9c5946fa3bb811c7ac
 
 /**
  * Created by Administrator on 2016/11/11.
  */
 public class ClassifyFragment extends Fragment implements HomePageActivity.MyTouchListener{
     RadioButton huncaiBtn;
-<<<<<<< HEAD
     RadioButton sucai_btn;
     RadioButton tangcai_btn;
     RadioButton dianxin_btn;
-=======
     RadioButton sucaiBtn;
     RadioButton tangcaiBtn;
     RadioButton dianxinBtn;
@@ -56,7 +51,6 @@ public class ClassifyFragment extends Fragment implements HomePageActivity.MyTou
     TextView textView;
     List<View> viewList = new ArrayList<View>();
     ImageView bannerImg;
->>>>>>> 813a57416c052df2083b1a9c5946fa3bb811c7ac
 
     @Nullable
     @Override
@@ -79,21 +73,8 @@ public class ClassifyFragment extends Fragment implements HomePageActivity.MyTou
         ((HomePageActivity)activity).registerMyTouchListener(this);
 
         //设置点击事件
-<<<<<<< HEAD
-        huncaiBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), ClassifyMeatActivity.class);
-                startActivity(intent);
-            }
-        });
-        sucai_btn.setOnClickListener(clickListener);
-        tangcai_btn.setOnClickListener(clickListener);
-        dianxin_btn.setOnClickListener(clickListener);
-
-=======
-        sucaiBtn.setOnClickListener(clickListener);
         huncaiBtn.setOnClickListener(clickListener);
+        sucaiBtn.setOnClickListener(clickListener);
         tangcaiBtn.setOnClickListener(clickListener);
         dianxinBtn.setOnClickListener(clickListener);
         radioBtn1.setChecked(true);
@@ -142,7 +123,6 @@ public class ClassifyFragment extends Fragment implements HomePageActivity.MyTou
                 }
             }
         });
->>>>>>> 813a57416c052df2083b1a9c5946fa3bb811c7ac
 
         for(int i=0;i<4;i++){
             view1 = activity.getLayoutInflater().inflate(R.layout.view_flipper_item,null);
@@ -211,15 +191,12 @@ public class ClassifyFragment extends Fragment implements HomePageActivity.MyTou
         public void onClick(View view) {
             switch (view.getId()){
                 case R.id.sucai_btn:
-<<<<<<< HEAD
-=======
                     intent = new Intent(activity, ClassifyMeatActivity.class);
                     startActivity(intent);
                     break;
                 case R.id.huncai_btn:
                     intent = new Intent(activity, ClassifyMeatActivity.class);
                     startActivity(intent);
->>>>>>> 813a57416c052df2083b1a9c5946fa3bb811c7ac
                     break;
                 case R.id.tangcai_btn:
                     intent = new Intent(activity, ClassifyMeatActivity.class);

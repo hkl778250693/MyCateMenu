@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    android:background="@color/huncai_bg_gray">
+    android:background="@android:color/white">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -49,8 +49,11 @@
             android:gravity="center_vertical"
             android:background="@drawable/huncai_banner_linearlayout_shape">
             <RelativeLayout
+                android:id="@+id/relative_btn"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
                 <ImageView
                     android:id="@+id/huncai_banner_menu_imageview"
                     android:layout_width="wrap_content"
@@ -60,10 +63,10 @@
                     android:paddingTop="3dp"
                     android:paddingRight="5dp"/>
                 <TextView
-                    android:id="@+id/huncai_menu_icon_numb_textview"
+                    android:id="@+id/menu_numb_textview"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:text="4"
+                    android:text="1"
                     android:textColor="@android:color/white"
                     android:textSize="16sp"
                     android:gravity="center"
@@ -78,6 +81,7 @@
                 android:padding="5dp"
                 android:background="@drawable/huncai_banner_edittext_shape"/>
             <RelativeLayout
+                android:id="@+id/relative_btn1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <ImageView
@@ -89,9 +93,10 @@
                     android:paddingTop="3dp"
                     android:paddingLeft="5dp"/>
                 <TextView
+                    android:id="@+id/collect_num_textview"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:text="4"
+                    android:text="1"
                     android:textColor="@android:color/white"
                     android:textSize="16sp"
                     android:gravity="center"
@@ -103,9 +108,9 @@
     <ListView
         android:id="@+id/listview"
         android:dividerHeight="8dp"
-        android:divider="@android:color/white"
+        android:divider="@color/gray_bg"
         android:layout_width="match_parent"
-        android:layout_marginTop="8dp"
+        android:layout_margin="10dp"
         android:scrollbars="none"
         android:layout_height="wrap_content"/>
 </LinearLayout>
