@@ -3,9 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:paddingLeft="15dp"
-    android:paddingTop="12dp"
-    android:paddingBottom="6dp"
     android:gravity="center_vertical">
 
     <ImageView

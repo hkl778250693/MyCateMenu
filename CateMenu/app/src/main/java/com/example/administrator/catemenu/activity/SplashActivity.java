@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
-import com.example.administrator.catemenu.R;
 
 /**
  * Created by Administrator on 2016/11/29.
@@ -17,7 +16,6 @@ public class SplashActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
 
         boolean mFirst = isFirstEnter(SplashActivity.this,SplashActivity.this.getClass().getName());
         if (mFirst){

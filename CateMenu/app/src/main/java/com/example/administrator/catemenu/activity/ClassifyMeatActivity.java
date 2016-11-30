@@ -3,11 +3,15 @@ package com.example.administrator.catemenu.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.MyApplication;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
 import com.example.administrator.catemenu.R;
 import com.example.administrator.catemenu.adapter.MeatItemAdapter;
 import com.example.administrator.catemenu.fragment.ClassifyFragment;
@@ -23,9 +27,15 @@ public class ClassifyMeatActivity extends Activity {
     List<MeatItem> meatItemList = new ArrayList<MeatItem>();
     ImageView backBtn;
     Intent intent;
+    RelativeLayout relativeBtn;
+    RelativeLayout relativeBtn1;
+    TextView menuNumbTextview;
+    TextView collectNumbTextview;
+    int num = 1;
+    int num1 = 1;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_classify_meat);
 
@@ -33,9 +43,15 @@ public class ClassifyMeatActivity extends Activity {
         //找到对应控件id
         backBtn = (ImageView) findViewById(R.id.back_btn);
         listview = (ListView) findViewById(R.id.listview);
+        relativeBtn = (RelativeLayout) findViewById(R.id.relative_btn);
+        relativeBtn1 = (RelativeLayout) findViewById(R.id.relative_btn1);
+        menuNumbTextview = (TextView) findViewById(R.id.menu_numb_textview);
+        collectNumbTextview = (TextView) findViewById(R.id.collect_num_textview);
 
         //设置点击事件
         backBtn.setOnClickListener(clickListener);
+        relativeBtn.setOnClickListener(clickListener);
+        relativeBtn1.setOnClickListener(clickListener);
 
         //设置适配器
         MeatItemAdapter meatItemAdapter = new MeatItemAdapter(this,meatItemList);
@@ -48,6 +64,14 @@ public class ClassifyMeatActivity extends Activity {
             switch (v.getId()){
                 case R.id.back_btn:
                     finish();
+                    break;
+                case R.id.relative_btn:
+                    menuNumbTextview.setText(""+num);
+                    num++;
+                    break;
+                case R.id.relative_btn1:
+
+                    collectNumbTextview.setText(""+num1++);
                     break;
             }
         }
