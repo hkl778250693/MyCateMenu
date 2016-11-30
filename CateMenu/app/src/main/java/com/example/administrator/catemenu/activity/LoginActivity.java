@@ -66,6 +66,9 @@ public class LoginActivity extends Activity {
                 startActivity(intent);
                 Toast.makeText(LoginActivity.this,
                         "授权成功", Toast.LENGTH_SHORT).show();
+
+                Intent intent1=new Intent(LoginActivity.this,HomePageActivity.class);
+                startActivity(intent1);
             } else {
                 // 以下几种情况，您会收到 Code：
                 // 1. 当您未在平台上注册的应用程序的包名与签名时；

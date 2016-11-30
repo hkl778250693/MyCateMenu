@@ -20,11 +20,6 @@ import android.widget.ViewFlipper;
 
 import com.example.administrator.catemenu.R;
 import com.example.administrator.catemenu.activity.ClassifyMeatActivity;
-<<<<<<< HEAD
-import com.example.administrator.catemenu.activity.TodayRecommendActivity;
-=======
-
->>>>>>> yls
 import com.example.administrator.catemenu.activity.HomePageActivity;
 
 import java.util.ArrayList;
