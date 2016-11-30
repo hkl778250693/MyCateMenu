@@ -8,7 +8,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@mipmap/guidepage_tow">
-
+        <TextView
+            android:id="@+id/tv_text1"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="50dp"
+            android:text="甄选"
+            android:textColor="@android:color/white"
+            android:ems="1"
+            android:textSize="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <LinearLayout
             android:layout_width="match_parent"
