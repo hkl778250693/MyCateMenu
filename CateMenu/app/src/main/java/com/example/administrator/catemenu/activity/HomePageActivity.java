@@ -2,23 +2,17 @@ package com.example.administrator.catemenu.activity;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-
-
-import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
-
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -34,8 +28,6 @@ import com.example.administrator.catemenu.fragment.ShopFragment;
 import com.example.administrator.catemenu.fragment.SquareFragment;
 import com.example.administrator.catemenu.modle.AccessTokenKeeper;
 import com.example.administrator.catemenu.modle.Constants;
-import com.marshalchen.common.CommonApplication;
-import com.nostra13.universalimageloader.core.ImageLoader;
 import com.sina.weibo.sdk.auth.Oauth2AccessToken;
 import com.sina.weibo.sdk.exception.WeiboException;
 import com.sina.weibo.sdk.net.AsyncWeiboRunner;
@@ -44,7 +36,6 @@ import com.sina.weibo.sdk.net.WeiboParameters;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
 
 import java.util.ArrayList;
 
@@ -160,7 +151,7 @@ public class HomePageActivity extends BaseActivity {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            //ImageLoader.getInstance().displayImage(headImageUrl,headImageview);
+
         }
     };
 

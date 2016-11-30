@@ -25,7 +25,7 @@ package com.example.administrator.catemenu.modle;
 public interface Constants {
 
     /** 褰撳墠 DEMO 搴旂敤鐨� APP_KEY锛岀涓夋柟搴旂敤搴旇浣跨敤鑷繁鐨� APP_KEY 鏇挎崲璇� APP_KEY */
-    public static final String APP_KEY      = "3163402899";
+    public static final String APP_KEY      = "819640564";
 
     /** 
      * 褰撳墠 DEMO 搴旂敤鐨勫洖璋冮〉锛岀涓夋柟搴旂敤鍙互浣跨敤鑷繁鐨勫洖璋冮〉銆�

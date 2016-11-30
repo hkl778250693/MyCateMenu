@@ -3,7 +3,6 @@ package com.example.administrator.catemenu.activity;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -14,10 +13,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
-
 import com.example.administrator.catemenu.R;
 import com.example.administrator.catemenu.adapter.ViewPagerAdapter;
-import com.example.administrator.catemenu.modle.DepthPageTransformer;
 import com.example.administrator.catemenu.modle.Zoom;
 
 import java.util.ArrayList;
@@ -31,7 +28,9 @@ public class GuideActivity extends BaseActivity {
     List<View> arraylist;
     TextView tvgetlogin;
     GestureDetector gestureDetector;
-
+    View view;
+    View view1;
+    View view2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,9 +41,6 @@ public class GuideActivity extends BaseActivity {
         gestureDetector = new GestureDetector(this,onGestureListener);
 
         LayoutInflater layoutInflater = LayoutInflater.from(this);
-        View view = layoutInflater.inflate(R.layout.viewpager_guidepage_one, null);
-        View view1 = layoutInflater.inflate(R.layout.viewpager_guidepage_two, null);
-        View view2 = layoutInflater.inflate(R.layout.viewpager_guidepage_three, null);
         view = layoutInflater.inflate(R.layout.viewpager_guidepage_one, null);
         view1 = layoutInflater.inflate(R.layout.viewpager_guidepage_two, null);
         view2 = layoutInflater.inflate(R.layout.viewpager_guidepage_three, null);
@@ -122,9 +118,7 @@ public class GuideActivity extends BaseActivity {
     }
 
     //重写页面销毁方法
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
+
     private void into() {
         TextView text = (TextView) view.findViewById(R.id.tv_text);
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/zitiguanjiafangmeng.ttf");
