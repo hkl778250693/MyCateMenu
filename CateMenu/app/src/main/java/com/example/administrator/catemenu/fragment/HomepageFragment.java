@@ -58,6 +58,7 @@ public class HomepageFragment extends Fragment implements View.OnClickListener,H
     @Nullable
     @Override//加载页面
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        Log.i("onCreateView==","");
         view = inflater.inflate(R.layout.fragment_homepage, null);
 
         //找到相应的控件id
@@ -199,6 +200,16 @@ public class HomepageFragment extends Fragment implements View.OnClickListener,H
         return view;
     }
 
+<<<<<<< HEAD
+=======
+    @Override
+    public void onStart() {
+        Log.i("fragmentonStart==","");
+
+        super.onStart();
+    }
+
+>>>>>>> 1140307baa890e9e25325b98b41364c4892c9fc9
     /*//加载banner的数据
     public void intopager() {
         imgBanner = new ArrayList<ImageView>();
@@ -262,6 +273,10 @@ public class HomepageFragment extends Fragment implements View.OnClickListener,H
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
         }*/
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1140307baa890e9e25325b98b41364c4892c9fc9
 
 
     @Override

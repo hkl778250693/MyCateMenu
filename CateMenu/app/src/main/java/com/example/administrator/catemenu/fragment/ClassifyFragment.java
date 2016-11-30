@@ -20,8 +20,11 @@ import android.widget.ViewFlipper;
 
 import com.example.administrator.catemenu.R;
 import com.example.administrator.catemenu.activity.ClassifyMeatActivity;
+<<<<<<< HEAD
 import com.example.administrator.catemenu.activity.TodayRecommendActivity;
 import com.example.administrator.catemenu.activity.TodayRecommendActivity;
+=======
+>>>>>>> 1140307baa890e9e25325b98b41364c4892c9fc9
 import com.example.administrator.catemenu.activity.HomePageActivity;
 
 import java.util.ArrayList;
@@ -33,9 +36,6 @@ import java.util.List;
  */
 public class ClassifyFragment extends Fragment implements HomePageActivity.MyTouchListener{
     RadioButton huncaiBtn;
-    RadioButton sucai_btn;
-    RadioButton tangcai_btn;
-    RadioButton dianxin_btn;
     RadioButton sucaiBtn;
     RadioButton tangcaiBtn;
     RadioButton dianxinBtn;
@@ -75,8 +75,8 @@ public class ClassifyFragment extends Fragment implements HomePageActivity.MyTou
         ((HomePageActivity)activity).registerMyTouchListener(this);
 
         //设置点击事件
-        huncaiBtn.setOnClickListener(clickListener);
         sucaiBtn.setOnClickListener(clickListener);
+        huncaiBtn.setOnClickListener(clickListener);
         tangcaiBtn.setOnClickListener(clickListener);
         dianxinBtn.setOnClickListener(clickListener);
         radioBtn1.setChecked(true);
