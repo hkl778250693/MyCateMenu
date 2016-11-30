@@ -20,7 +20,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.SplashActivity">
+        <activity android:name=".activity.SplashActivity" android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -61,6 +61,9 @@
         <activity android:name=".activity.ClassifyMeatActivity"/>
         <activity android:name=".activity.UploadActivity"/>
         <activity android:name=".activity.MyFoodOrderActivity"/>
+        <activity android:name=".activity.ShopXiangqingActivity"/>
+        <activity android:name=".activity.BuyActivity"/>
+        <activity android:name=".activity.BuySuccessActivity"/>
 
         <activity
             android:name="com.mob.tools.MobUIShell"

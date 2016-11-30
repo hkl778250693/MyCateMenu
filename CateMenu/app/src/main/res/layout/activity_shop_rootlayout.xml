@@ -8,5 +8,9 @@
         android:id="@+id/gridview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:numColumns="2"/>
+        android:numColumns="2"
+        android:scrollbars="none"
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        />
 </LinearLayout>

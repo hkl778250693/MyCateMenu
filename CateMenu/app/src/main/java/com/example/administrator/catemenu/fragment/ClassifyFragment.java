@@ -20,17 +20,8 @@ import android.widget.ViewFlipper;
 
 import com.example.administrator.catemenu.R;
 import com.example.administrator.catemenu.activity.ClassifyMeatActivity;
-<<<<<<< HEAD
 import com.example.administrator.catemenu.activity.TodayRecommendActivity;
-=======
-<<<<<<< HEAD
 import com.example.administrator.catemenu.activity.TodayRecommendActivity;
-=======
->>>>>>> bab28afb2ff10ee6f72a21ca05a56d2dea550511
-=======
-
->>>>>>> 02327ead80e2f4d006e92d80e2c53d66ebcad02c
->>>>>>> 333c2f43ac814b5451a79ba4ae9f8fcfddaa680f
 import com.example.administrator.catemenu.activity.HomePageActivity;
 
 import java.util.ArrayList;
