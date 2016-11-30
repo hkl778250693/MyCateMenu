@@ -4,11 +4,9 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
@@ -47,6 +45,9 @@ public class GuideActivity extends BaseActivity {
         View view = layoutInflater.inflate(R.layout.viewpager_guidepage_one, null);
         View view1 = layoutInflater.inflate(R.layout.viewpager_guidepage_two, null);
         View view2 = layoutInflater.inflate(R.layout.viewpager_guidepage_three, null);
+        view = layoutInflater.inflate(R.layout.viewpager_guidepage_one, null);
+        view1 = layoutInflater.inflate(R.layout.viewpager_guidepage_two, null);
+        view2 = layoutInflater.inflate(R.layout.viewpager_guidepage_three, null);
         arraylist = new ArrayList<View>();
         arraylist.add(view);
         arraylist.add(view1);
@@ -57,6 +58,7 @@ public class GuideActivity extends BaseActivity {
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(arraylist);
         viewPager.setAdapter(viewPagerAdapter);
 
+        into();
         tvgetlogin = (TextView) view2.findViewById(R.id.tv_getlogin);
         tvgetlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,5 +125,19 @@ public class GuideActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+    private void into() {
+        TextView text = (TextView) view.findViewById(R.id.tv_text);
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/zitiguanjiafangmeng.ttf");
+        text.setTypeface(typeface);
+        TextView text1 = (TextView) view1.findViewById(R.id.tv_text1);
+        Typeface typeface1 = Typeface.createFromAsset(getAssets(), "fonts/zitiguanjiafangmeng.ttf");
+        text1.setTypeface(typeface1);
+        TextView text2 = (TextView) view2.findViewById(R.id.tv_text2);
+        Typeface typeface2 = Typeface.createFromAsset(getAssets(), "fonts/zitiguanjiafangmeng.ttf");
+        text2.setTypeface(typeface2);
+        TextView text3= (TextView) view2.findViewById(R.id.tv_getlogin);
+        Typeface typeface3 = Typeface.createFromAsset(getAssets(), "fonts/zitiguanjiafangmeng.ttf");
+        text3.setTypeface(typeface3);
+
     }
 }

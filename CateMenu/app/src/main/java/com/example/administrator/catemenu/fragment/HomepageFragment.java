@@ -58,6 +58,7 @@ public class HomepageFragment extends Fragment implements View.OnClickListener,H
     @Nullable
     @Override//加载页面
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        Log.i("onCreateView==","");
         view = inflater.inflate(R.layout.fragment_homepage, null);
 
         //找到相应的控件id

@@ -25,6 +25,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.SplashActivity">
+        <activity android:name=".activity.SplashActivity" android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -65,12 +66,24 @@
         <activity android:name=".activity.ClassifyMeatActivity"/>
         <activity android:name=".activity.UploadActivity"/>
         <activity android:name=".activity.MyFoodOrderActivity"/>
+        <activity android:name=".activity.ShopXiangqingActivity"/>
+        <activity android:name=".activity.BuyActivity"/>
+        <activity android:name=".activity.BuySuccessActivity"/>
 
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:windowSoftInputMode="stateHidden|adjustResize"/>
+
+        <activity android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"
+            android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false" >
+        </activity>
+        <service android:name="com.sina.weibo.sdk.net.DownloadService">
+            android:exported="false"
+        </service>
     </application>
 
 </manifest>

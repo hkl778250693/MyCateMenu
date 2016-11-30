@@ -2,12 +2,18 @@ package com.example.administrator.catemenu.activity;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.app.Activity;
 
+
+import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -18,7 +24,6 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.administrator.catemenu.R;
@@ -27,8 +32,23 @@ import com.example.administrator.catemenu.fragment.FeastFragment;
 import com.example.administrator.catemenu.fragment.HomepageFragment;
 import com.example.administrator.catemenu.fragment.ShopFragment;
 import com.example.administrator.catemenu.fragment.SquareFragment;
+import com.example.administrator.catemenu.modle.AccessTokenKeeper;
+import com.example.administrator.catemenu.modle.Constants;
+import com.marshalchen.common.CommonApplication;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.sina.weibo.sdk.auth.Oauth2AccessToken;
+import com.sina.weibo.sdk.exception.WeiboException;
+import com.sina.weibo.sdk.net.AsyncWeiboRunner;
+import com.sina.weibo.sdk.net.RequestListener;
+import com.sina.weibo.sdk.net.WeiboParameters;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 
 import java.util.ArrayList;
+
+
 
 /**
  * Created by Administrator on 2016/10/20.
@@ -46,11 +66,6 @@ public class HomePageActivity extends BaseActivity {
     RadioButton shopBtn;
     RadioButton feastBtn;
     RadioButton squareBtn;
-    RadioButton homepagerb;
-    RadioButton classifyrb;
-    RadioButton shoprb;
-    RadioButton feastrb;
-    RadioButton squarerb;
     ImageView moreImgview;
     ImageView headImageview;
     ImageView searchImgs;
@@ -76,28 +91,18 @@ public class HomePageActivity extends BaseActivity {
         shopBtn = (RadioButton) findViewById(R.id.rb_shop);
         feastBtn = (RadioButton) findViewById(R.id.rb_feast);
         squareBtn = (RadioButton) findViewById(R.id.rb_square);
-        headimg= (ImageView) findViewById(R.id.head_imageview);
+        //headimg= (ImageView) findViewById(R.id.head_imageview);
         searchImgs = (ImageView) findViewById(R.id.search_imgs);
-        homepagerb = (RadioButton) findViewById(R.id.rb_homepage);
-        classifyrb = (RadioButton) findViewById(R.id.rb_classify);
-        shoprb = (RadioButton) findViewById(R.id.rb_shop);
-        feastrb = (RadioButton) findViewById(R.id.rb_feast);
-        squarerb = (RadioButton) findViewById(R.id.rb_square);
         moreImgview = (ImageView) findViewById(R.id.more_imgview);
         headImageview = (ImageView) findViewById(R.id.head_imageview);
 
-        headimg.setOnClickListener(clickListener);
+        //headimg.setOnClickListener(clickListener);
         homepageBtn.setOnClickListener(clickListener);
         classifyBtn.setOnClickListener(clickListener);
         shopBtn.setOnClickListener(clickListener);
         feastBtn.setOnClickListener(clickListener);
         squareBtn.setOnClickListener(clickListener);
         searchImgs.setOnClickListener(clickListener);
-        homepagerb.setOnClickListener(clickListener);
-        classifyrb.setOnClickListener(clickListener);
-        shoprb.setOnClickListener(clickListener);
-        feastrb.setOnClickListener(clickListener);
-        squarerb.setOnClickListener(clickListener);
         moreImgview.setOnClickListener(clickListener);
         headImageview.setOnClickListener(clickListener);
 
@@ -105,7 +110,59 @@ public class HomePageActivity extends BaseActivity {
         if (homepageBtn.isChecked()) {
             addHomepageFragment();
         }
+
+        Log.i("onCreate===","");
+        new Thread(){
+            @Override
+            public void run() {
+                intoweibo();
+            }
+        }.start();
+
     }
+
+
+
+    String headImageUrl;
+    public void intoweibo(){
+        if(AccessTokenKeeper.readAccessToken(this)!=null){
+           Oauth2AccessToken accessToken=AccessTokenKeeper.readAccessToken(this);
+            WeiboParameters parameters=new WeiboParameters(Constants.APP_KEY);
+            parameters.put("access_token",accessToken.getToken());
+            parameters.put("uid",accessToken.getUid());
+            AsyncWeiboRunner asyncWeiboRunner=new AsyncWeiboRunner(this);
+            asyncWeiboRunner.requestAsync("https://api.weibo.com/2/users/show.json", parameters, "GET", new RequestListener() {
+                @Override
+                public void onComplete(String s) {
+                    Log.i("onComplete=====",""+s);
+
+                    try {
+                        JSONObject jsonObject= null;
+                        jsonObject = new JSONObject(s);
+
+                        String jObj=jsonObject.getString("profile_image_url");
+                        Log.i("JSONObject=====",""+jObj);
+                        headImageUrl=jObj;
+                        handler.sendEmptyMessage(0);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+                @Override
+                public void onWeiboException(WeiboException e) {
+
+                }
+            });
+        }
+    }
+
+    Handler handler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            //ImageLoader.getInstance().displayImage(headImageUrl,headImageview);
+        }
+    };
 
     View.OnClickListener clickListener = new View.OnClickListener() {
         @Override
@@ -159,6 +216,7 @@ public class HomePageActivity extends BaseActivity {
             transaction.commit();
         }
     };
+
 
     public void addHomepageFragment() {
         homepageFragment = new HomepageFragment();

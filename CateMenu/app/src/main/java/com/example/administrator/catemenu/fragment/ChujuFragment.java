@@ -2,13 +2,16 @@ package com.example.administrator.catemenu.fragment;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
+import com.example.administrator.catemenu.activity.ShopXiangqingActivity;
 import com.example.administrator.catemenu.adapter.ChujuAdapter;
 import com.example.administrator.catemenu.R;
 import com.example.administrator.catemenu.modle.Chuju;
@@ -27,10 +30,17 @@ public class ChujuFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_shop_rootlayout,null);
         gridView = (GridView) view.findViewById(R.id.gridview);
-        Activity activityChuju = getActivity();
+        final Activity activityChuju = getActivity();
         list = getData();
         ChujuAdapter chujuAdapter = new ChujuAdapter(activityChuju,list);
         gridView.setAdapter(chujuAdapter);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(activityChuju, ShopXiangqingActivity.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
     //创建数据源

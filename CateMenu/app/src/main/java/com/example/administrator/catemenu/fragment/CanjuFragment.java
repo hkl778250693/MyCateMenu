@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import com.example.administrator.catemenu.activity.XiangqingActivity;
+import com.example.administrator.catemenu.activity.ShopXiangqingActivity;
 import com.example.administrator.catemenu.adapter.CanjuAdapter;
 import com.example.administrator.catemenu.R;
 import com.example.administrator.catemenu.modle.Canju;
@@ -37,12 +37,10 @@ public class CanjuFragment extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(canjuActivity, XiangqingActivity.class);
+                Intent intent = new Intent(canjuActivity, ShopXiangqingActivity.class);
                 startActivity(intent);
             }
         });
-        gridView.setVerticalScrollBarEnabled(false);
-        gridView.setOverScrollMode(View.OVER_SCROLL_NEVER);
         return view;
     }
     //餐具数据源
