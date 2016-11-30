@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/photo_ll"
+    android:padding="5dp">
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/photo_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="相机"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:button="@null"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/homepage_radiobutton_bg"
+            android:textColor="@drawable/yhsz_textcolor_selector"/>
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="从相册中选择"
+            android:button="@null"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/homepage_radiobutton_bg"
+            android:textColor="@drawable/yhsz_textcolor_selector"/>
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="取消"
+            android:button="@null"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:background="@drawable/homepage_radiobutton_bg"
+            android:textColor="@drawable/yhsz_textcolor_selector"/>
+    </RadioGroup>
+
+</LinearLayout>

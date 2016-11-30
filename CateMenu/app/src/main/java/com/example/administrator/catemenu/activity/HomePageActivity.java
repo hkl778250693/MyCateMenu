@@ -33,7 +33,7 @@ import java.util.ArrayList;
 /**
  * Created by Administrator on 2016/10/20.
  */
-public class HomePageActivity extends Activity {
+public class HomePageActivity extends BaseActivity {
     HomepageFragment homepageFragment;
     ClassifyFragment classifyFragment;
     ShopFragment shopFragment;
@@ -155,7 +155,6 @@ public class HomePageActivity extends Activity {
                     intent = new Intent(HomePageActivity.this,SearchActivity.class);
                     startActivity(intent);
                     break;
-
             }
             transaction.commit();
         }
@@ -281,5 +280,10 @@ public class HomePageActivity extends Activity {
             return true;
         }
         return super.dispatchKeyEvent(event);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }

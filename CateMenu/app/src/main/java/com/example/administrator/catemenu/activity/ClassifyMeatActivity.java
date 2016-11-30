@@ -70,7 +70,6 @@ public class ClassifyMeatActivity extends Activity {
                     num++;
                     break;
                 case R.id.relative_btn1:
-
                     collectNumbTextview.setText(""+num1++);
                     break;
             }

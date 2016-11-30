@@ -199,9 +199,7 @@ public class HomepageFragment extends Fragment implements View.OnClickListener,H
         return view;
     }
 
-<<<<<<< HEAD
 
-=======
     /*//加载banner的数据
     public void intopager() {
         imgBanner = new ArrayList<ImageView>();
@@ -265,8 +263,6 @@ public class HomepageFragment extends Fragment implements View.OnClickListener,H
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
         }*/
->>>>>>> 333c2f43ac814b5451a79ba4ae9f8fcfddaa680f
-
 
     @Override
     public void onClick(View v) {

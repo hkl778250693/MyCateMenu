@@ -1,8 +1,13 @@
 package com.example.administrator.catemenu.fragment;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -20,7 +25,6 @@ import android.widget.ViewFlipper;
 
 import com.example.administrator.catemenu.R;
 import com.example.administrator.catemenu.activity.ClassifyMeatActivity;
-import com.example.administrator.catemenu.activity.TodayRecommendActivity;
 import com.example.administrator.catemenu.activity.HomePageActivity;
 
 import java.util.ArrayList;
@@ -49,6 +53,11 @@ public class ClassifyFragment extends Fragment implements HomePageActivity.MyTou
     TextView textView;
     List<View> viewList = new ArrayList<View>();
     ImageView bannerImg;
+    ImageView lazyerImageview;
+    int[] mImageId;
+    int currentPosition = 0;
+    int rightFlag = 0;
+    int leftFlag = 1;
 
     @Nullable
     @Override
@@ -66,9 +75,11 @@ public class ClassifyFragment extends Fragment implements HomePageActivity.MyTou
         radioBtn2 = (RadioButton) view.findViewById(R.id.radio_btn2);
         radioBtn3 = (RadioButton) view.findViewById(R.id.radio_btn3);
         radioBtn4 = (RadioButton) view.findViewById(R.id.radio_btn4);
+        lazyerImageview = (ImageView) view.findViewById(R.id.lazyer_imageview);
 
         activity = getActivity();
         ((HomePageActivity)activity).registerMyTouchListener(this);
+        setImage();
 
         //设置点击事件
         sucaiBtn.setOnClickListener(clickListener);
@@ -258,10 +269,54 @@ public class ClassifyFragment extends Fragment implements HomePageActivity.MyTou
                 viewFlipper.showNext();
                 viewFlipper.startFlipping();
             }
-            Log.i("onFling","onFling======");
-            return false;
+
+            float x = e2.getX() - e1.getX();
+            float y = e2.getY() - e1.getY();
+
+            if (x > 0) {
+                doResult(0);
+            } else if (x < 0) {
+                doResult(1);
+            }
+            return true;
         }
     };
+
+
+    //The method is used to set image
+    private void setImage(){
+        mImageId=new int[]{R.mipmap.lazyperson,R.mipmap.loseweight,R.mipmap.child};
+        Resources resources = this.getResources();
+        Drawable imageDrawable = resources.getDrawable(mImageId[currentPosition]);
+        lazyerImageview.setBackgroundDrawable(imageDrawable);
+    }
+
+    public void doResult(int action) {
+        switch (action) {
+            case 0:
+                startAnimation();
+                currentPosition=(currentPosition+mImageId.length + 1) % mImageId.length;
+                setImage();
+                break;
+            case 1:
+                startAnimation();
+                currentPosition=(currentPosition+mImageId.length - 1) % mImageId.length;
+                setImage();
+                break;
+        }
+    }
+
+    public void startAnimation(){
+        ObjectAnimator alphaAnimator = ObjectAnimator.ofFloat(lazyerImageview,"alpha",1.0F,0F,1.0F);
+        alphaAnimator.setDuration(2000);
+        alphaAnimator.setRepeatMode(ValueAnimator.REVERSE);
+        ObjectAnimator rotateAnimator = ObjectAnimator.ofFloat(lazyerImageview,"RotationY",0F,180F);
+        rotateAnimator.setDuration(2000);
+        rotateAnimator.setRepeatMode(ValueAnimator.REVERSE);
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.play(alphaAnimator).with(rotateAnimator);
+        animatorSet.start();
+    }
 
     //重写OnTouchEvent点击事件
     @Override
