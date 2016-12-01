@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/person_setting_root_ll">
+    android:id="@+id/person_setting_root_ll"
+    android:background="@android:color/white">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,14 +36,19 @@
             android:layout_height="match_parent"
             android:src="@mipmap/share"
             android:scaleType="centerCrop"/>
-        <ImageView
+
+        <com.example.administrator.catemenu.customview.HeadView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/head_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:src="@mipmap/head_img"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="40dp"
-            android:layout_alignBottom="@+id/sixin_head_imageview"/>
+            android:adjustViewBounds="true"
+            android:layout_alignBottom="@+id/sixin_head_imageview"
+            app:border_width="2dp"
+            app:border_color="@color/yellow"/>
     </RelativeLayout>
     <TextView
         android:layout_width="match_parent"
@@ -80,7 +86,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/gray_bg"/>
-    <TextView
+     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="爱好口味："
