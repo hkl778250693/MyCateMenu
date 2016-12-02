@@ -50,13 +50,6 @@
                         android:button="@null"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/homepage_radiobutton_bg"/>
-                    <RadioButton
-                        android:id="@+id/radio_btn4"
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
-                        android:button="@null"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/homepage_radiobutton_bg"/>
                 </RadioGroup>
             </RelativeLayout>
 

@@ -30,8 +30,7 @@ public class UploadActivity extends Activity{
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.back_btn:
-                    intent = new Intent(UploadActivity.this,MineActivity.class);
-                    startActivity(intent);
+                    finish();
                     break;
             }
         }

@@ -36,8 +36,7 @@ public class FeedBackActivity extends Activity {
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.back_btn:
-                    intent = new Intent(FeedBackActivity.this,HomePageActivity.class);
-                    startActivity(intent);
+                    finish();
                     break;
                 case R.id.commit_btn:
                     intent = new Intent(FeedBackActivity.this,HomePageActivity.class);

@@ -22,8 +22,7 @@ public class SixinActivity extends Activity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(SixinActivity.this,MinePrivateLetterActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
     }

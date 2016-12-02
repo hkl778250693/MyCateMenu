@@ -1,15 +1,20 @@
 package com.example.administrator.catemenu.fragment;
 
-import android.app.Fragment;
+import android.content.Intent;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.RadioButton;
 
 import com.example.administrator.catemenu.R;
+import com.example.administrator.catemenu.activity.HomePageActivity;
+import com.example.administrator.catemenu.activity.SearchActivity;
 import com.example.administrator.catemenu.adapter.YhzsAdapter;
 import com.example.administrator.catemenu.modle.Yhzs;
 

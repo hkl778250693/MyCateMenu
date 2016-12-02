@@ -2,9 +2,9 @@ package com.example.administrator.catemenu.activity;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.app.Activity;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -45,7 +45,7 @@ import java.util.ArrayList;
 /**
  * Created by Administrator on 2016/10/20.
  */
-public class HomePageActivity extends Activity {
+public class HomePageActivity extends FragmentActivity {
     HomepageFragment homepageFragment;
     ClassifyFragment classifyFragment;
     ShopFragment shopFragment;
@@ -71,6 +71,8 @@ public class HomePageActivity extends Activity {
     Intent intent;
     RadioGroup radioGroup;
     private long exitTime;
+    FragmentManager fragmentManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,8 +114,6 @@ public class HomePageActivity extends Activity {
         }.start();
 
     }
-
-
 
     String headImageUrl;
     public void intoweibo(){
@@ -159,7 +159,7 @@ public class HomePageActivity extends Activity {
     View.OnClickListener clickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager = getSupportFragmentManager();
             FragmentTransaction transaction = fragmentManager.beginTransaction();
             switch (v.getId()) {
                 case R.id.rb_homepage:
@@ -212,7 +212,7 @@ public class HomePageActivity extends Activity {
 
     public void addHomepageFragment() {
         homepageFragment = new HomepageFragment();
-        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.ll, homepageFragment);
         fragmentTransaction.commit();

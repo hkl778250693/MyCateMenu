@@ -5,7 +5,8 @@
     android:orientation="horizontal"
     android:padding="10dp"
     android:layout_margin="4dp"
-    android:background="@drawable/yhzs_listview_item_shape">
+    android:background="@drawable/yhzs_listview_item_shape"
+    android:descendantFocusability="blocksDescendants">
     <ImageView
         android:id="@+id/head_img"
         android:layout_width="wrap_content"

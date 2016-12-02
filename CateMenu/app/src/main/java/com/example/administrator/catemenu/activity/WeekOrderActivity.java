@@ -3,6 +3,7 @@ package com.example.administrator.catemenu.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -68,6 +69,7 @@ public class WeekOrderActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 headImg = (ImageView) view.findViewById(R.id.head_img);
+                Log.i("weekListview","weekListview");
                 headImg.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

@@ -204,11 +204,7 @@
                         android:layout_height="wrap_content"
                         android:text="3.牛奶燕麦粥"
                         android:layout_marginBottom="5dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="4. ... ..."
-                        android:layout_marginBottom="5dp"/>
+
                 </LinearLayout>
             </RelativeLayout>
 
@@ -252,11 +248,7 @@
                         android:layout_height="wrap_content"
                         android:text="3.牛奶燕麦粥"
                         android:layout_marginBottom="5dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="4. ... ..."
-                        android:layout_marginBottom="5dp"/>
+
                 </LinearLayout>
             </RelativeLayout>
 
@@ -300,11 +292,7 @@
                         android:layout_height="wrap_content"
                         android:text="3.牛奶燕麦粥"
                         android:layout_marginBottom="5dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="4. ... ..."
-                        android:layout_marginBottom="5dp"/>
+
                 </LinearLayout>
             </RelativeLayout>
         </LinearLayout>
