@@ -66,13 +66,16 @@ public class ClassifyMeatActivity extends Activity {
                     finish();
                     break;
                 case R.id.relative_btn:
-                    menuNumbTextview.setText(""+num);
                     num++;
+                    menuNumbTextview.setText(""+num);
                     break;
                 case R.id.relative_btn1:
-                    collectNumbTextview.setText(""+num1++);
+                    num1++;
+                    collectNumbTextview.setText(""+num1);
                     break;
             }
+            menuNumbTextview.clearFocus();
+            collectNumbTextview.clearFocus();
         }
     };
 

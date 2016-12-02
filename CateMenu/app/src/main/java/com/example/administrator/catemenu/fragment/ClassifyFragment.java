@@ -18,15 +18,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.ViewFlipper;
 
 import com.example.administrator.catemenu.R;
 import com.example.administrator.catemenu.activity.ClassifyMeatActivity;
-import com.example.administrator.catemenu.activity.TodayRecommendActivity;
 import com.example.administrator.catemenu.activity.HomePageActivity;
 
 import java.util.ArrayList;

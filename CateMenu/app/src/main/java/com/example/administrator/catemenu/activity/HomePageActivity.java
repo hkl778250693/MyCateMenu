@@ -2,6 +2,7 @@ package com.example.administrator.catemenu.activity;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
@@ -44,7 +45,7 @@ import java.util.ArrayList;
 /**
  * Created by Administrator on 2016/10/20.
  */
-public class HomePageActivity extends BaseActivity {
+public class HomePageActivity extends Activity {
     HomepageFragment homepageFragment;
     ClassifyFragment classifyFragment;
     ShopFragment shopFragment;
