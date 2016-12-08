@@ -225,10 +225,10 @@ public class HomePageActivity extends FragmentActivity {
 
         //找到对应控件id
         integralBtn = (RadioButton) contentView.findViewById(R.id.integral_btn);
-        myAttentionBtn = (RadioButton) contentView.findViewById(R.id.integral_btn);
-        myUploadBtn = (RadioButton) contentView.findViewById(R.id.integral_btn);
-        mySixinBtn = (RadioButton) contentView.findViewById(R.id.integral_btn);
-        feedBackBtn = (RadioButton) contentView.findViewById(R.id.integral_btn);
+        myAttentionBtn = (RadioButton) contentView.findViewById(R.id.my_attention_btn);
+        myUploadBtn = (RadioButton) contentView.findViewById(R.id.my_upload_btn);
+        mySixinBtn = (RadioButton) contentView.findViewById(R.id.my_sixin_btn);
+        feedBackBtn = (RadioButton) contentView.findViewById(R.id.feed_back_btn);
         radioGroup = (RadioGroup) contentView.findViewById(R.id.radio_group);
 
         //设置点击事件

@@ -60,4 +60,10 @@
     <string name="publisher">发布人：</string>
     <string name="personal_signature">个性签名：</string>
     <string name="upload">上传</string>
+    <string name="nick_name">昵称</string>
+    <string name="commit">确认修改</string>
+    <string name="phone_number">电话号码</string>
+    <string name="address">收货地址</string>
+    <string name="gender">性别</string>
+    <string name="edit">修改个人信息</string>
 </resources>

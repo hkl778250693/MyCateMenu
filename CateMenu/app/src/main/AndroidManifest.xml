@@ -47,7 +47,6 @@
         <activity android:name=".activity.FoodPaymentDetailsActivity"/>
         <activity android:name=".activity.VideoActivity"/>
         <activity android:name=".activity.MenuFileActivity"/>
-        <activity android:name=".activity.TasteSettingsActivity"/>
         <activity android:name=".activity.SigninActivity"/>
         <activity android:name=".activity.CollectActivity"/>
         <activity android:name=".activity.ShareActivity"/>
@@ -68,6 +67,7 @@
         <activity android:name=".activity.ShopXiangqingActivity"/>
         <activity android:name=".activity.BuyActivity"/>
         <activity android:name=".activity.BuySuccessActivity"/>
+        <activity android:name=".activity.PersonSettingEditActivity"/>
 
         <activity
             android:name="com.mob.tools.MobUIShell"

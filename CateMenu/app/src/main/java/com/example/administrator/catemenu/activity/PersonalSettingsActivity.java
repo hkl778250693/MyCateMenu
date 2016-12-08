@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.icu.util.ULocale;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -20,7 +19,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 
 import com.example.administrator.catemenu.R;
 
@@ -41,6 +39,8 @@ public class PersonalSettingsActivity extends Activity {
     private RadioButton cancleBtn;
     private RadioButton selectBtn;
     private PopupWindow popupWindow;
+    private Button editBtn;
+    private LinearLayout tasteLinearlayout;
     private static final int SELECT_PHOTO = 0;
     private static final int TAKE_PHOTO = 1;
     private File tempFile;
@@ -56,10 +56,14 @@ public class PersonalSettingsActivity extends Activity {
         settingBackBtn = (ImageView) findViewById(R.id.setting_back_btn);
         headImg = (ImageView) findViewById(R.id.head_img);
         personSettingRootLl = (LinearLayout) findViewById(R.id.person_setting_root_ll);
+        editBtn = (Button) findViewById(R.id.edit_btn);
+        tasteLinearlayout = (LinearLayout) findViewById(R.id.taste_linearlayout);
 
         //设置点击事件
         settingBackBtn.setOnClickListener(clickListener);
         headImg.setOnClickListener(clickListener);
+        editBtn.setOnClickListener(clickListener);
+        tasteLinearlayout.setOnClickListener(clickListener);
     }
 
     View.OnClickListener clickListener = new View.OnClickListener() {
@@ -81,6 +85,10 @@ public class PersonalSettingsActivity extends Activity {
                     break;
                 case R.id.cancle_btn:
                     popupWindow.dismiss();
+                    break;
+                case R.id.edit_btn:
+                    intent = new Intent(PersonalSettingsActivity.this,PersonSettingEditActivity.class);
+                    startActivity(intent);
                     break;
             }
         }
