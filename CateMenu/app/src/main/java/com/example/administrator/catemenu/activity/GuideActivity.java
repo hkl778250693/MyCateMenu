@@ -3,6 +3,7 @@ package com.example.administrator.catemenu.activity;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -23,7 +24,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/10/19.
  */
-public class GuideActivity extends BaseActivity {
+public class GuideActivity extends Activity {
     ViewPager viewPager;
     List<View> arraylist;
     TextView tvgetlogin;

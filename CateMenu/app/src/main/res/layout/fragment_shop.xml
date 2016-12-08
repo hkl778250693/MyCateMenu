@@ -58,14 +58,12 @@
             android:layout_height="2dp"
             android:background="@color/gray_bg1" />
 
-        <LinearLayout
-            android:id="@+id/shop_linearLayout"
+        <android.support.v4.view.ViewPager
+            android:id="@+id/shop_viewPager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="5dp">
-
-        </LinearLayout>
+            android:padding="5dp"/>
 
     </LinearLayout>
 </LinearLayout>

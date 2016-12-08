@@ -29,8 +29,7 @@ public class AttentionActivity extends Activity {
         public void onClick(View view) {
             switch (view.getId()){
                 case R.id.back_btn:
-                    intent = new Intent(AttentionActivity.this,MineActivity.class);
-                    startActivity(intent);
+                    finish();
                     break;
             }
         }

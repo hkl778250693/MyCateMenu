@@ -2,8 +2,9 @@ package com.example.administrator.catemenu.activity;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -34,17 +35,17 @@ import com.sina.weibo.sdk.net.AsyncWeiboRunner;
 import com.sina.weibo.sdk.net.RequestListener;
 import com.sina.weibo.sdk.net.WeiboParameters;
 
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 
 
-
 /**
  * Created by Administrator on 2016/10/20.
  */
-public class HomePageActivity extends BaseActivity {
+public class HomePageActivity extends FragmentActivity {
     HomepageFragment homepageFragment;
     ClassifyFragment classifyFragment;
     ShopFragment shopFragment;
@@ -70,6 +71,8 @@ public class HomePageActivity extends BaseActivity {
     Intent intent;
     RadioGroup radioGroup;
     private long exitTime;
+    FragmentManager fragmentManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,17 +105,7 @@ public class HomePageActivity extends BaseActivity {
             addHomepageFragment();
         }
 
-        Log.i("onCreate===","");
-        new Thread(){
-            @Override
-            public void run() {
-                intoweibo();
-            }
-        }.start();
-
     }
-
-
 
     String headImageUrl;
     public void intoweibo(){
@@ -158,7 +151,7 @@ public class HomePageActivity extends BaseActivity {
     View.OnClickListener clickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager = getSupportFragmentManager();
             FragmentTransaction transaction = fragmentManager.beginTransaction();
             switch (v.getId()) {
                 case R.id.rb_homepage:
@@ -211,7 +204,7 @@ public class HomePageActivity extends BaseActivity {
 
     public void addHomepageFragment() {
         homepageFragment = new HomepageFragment();
-        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.ll, homepageFragment);
         fragmentTransaction.commit();
@@ -224,10 +217,10 @@ public class HomePageActivity extends BaseActivity {
 
         //找到对应控件id
         integralBtn = (RadioButton) contentView.findViewById(R.id.integral_btn);
-        myAttentionBtn = (RadioButton) contentView.findViewById(R.id.integral_btn);
-        myUploadBtn = (RadioButton) contentView.findViewById(R.id.integral_btn);
-        mySixinBtn = (RadioButton) contentView.findViewById(R.id.integral_btn);
-        feedBackBtn = (RadioButton) contentView.findViewById(R.id.integral_btn);
+        myAttentionBtn = (RadioButton) contentView.findViewById(R.id.my_attention_btn);
+        myUploadBtn = (RadioButton) contentView.findViewById(R.id.my_upload_btn);
+        mySixinBtn = (RadioButton) contentView.findViewById(R.id.my_sixin_btn);
+        feedBackBtn = (RadioButton) contentView.findViewById(R.id.feed_back_btn);
         radioGroup = (RadioGroup) contentView.findViewById(R.id.radio_group);
 
         //设置点击事件
@@ -331,8 +324,4 @@ public class HomePageActivity extends BaseActivity {
         return super.dispatchKeyEvent(event);
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
 }

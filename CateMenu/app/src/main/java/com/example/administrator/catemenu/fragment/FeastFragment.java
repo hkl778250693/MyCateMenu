@@ -1,6 +1,8 @@
 package com.example.administrator.catemenu.fragment;
 
 import android.app.Fragment;
+import android.content.Intent;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -14,6 +16,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.example.administrator.catemenu.R;
+import com.example.administrator.catemenu.activity.SearchActivity;
 import com.example.administrator.catemenu.adapter.YhzsAdapter;
 import com.example.administrator.catemenu.modle.Yhzs;
 
@@ -72,6 +75,13 @@ public class FeastFragment extends Fragment {
         yhzsListview.setAdapter(yhzsAdapter);
         layoutInflater = LayoutInflater.from(getActivity());
         itemView = layoutInflater.inflate(R.layout.listview_feast_item,null);
+        yhzsListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(),SearchActivity.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 

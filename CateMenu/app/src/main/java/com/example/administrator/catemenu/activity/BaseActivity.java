@@ -19,16 +19,14 @@ public abstract class BaseActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        registerBroadCast();
+        //registerBroadCast();
         send();
-        ActivityController.addActivity(this);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         unregister();
-        ActivityController.removeActivity(this);
     }
 
     public void registerBroadCast(){
