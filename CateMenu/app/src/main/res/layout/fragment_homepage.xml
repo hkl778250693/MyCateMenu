@@ -69,7 +69,7 @@
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/btn_breakfast"
+                        android:id="@+id/btn_breakfast_homepage"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="12dp"
@@ -184,22 +184,26 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="50dp">
                     <TextView
+                        android:id="@+id/day_recommended"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/today_recommend"
                         android:textColor="@color/yellow"
                         android:paddingBottom="15dp"/>
                     <TextView
+                        android:id="@+id/dishesnaem1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="1.牛奶燕麦粥"
                         android:layout_marginBottom="5dp"/>
                     <TextView
+                        android:id="@+id/dishesnaem2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="2.牛奶燕麦粥"
                         android:layout_marginBottom="5dp"/>
                     <TextView
+                        android:id="@+id/dishesnaem3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="3.牛奶燕麦粥"

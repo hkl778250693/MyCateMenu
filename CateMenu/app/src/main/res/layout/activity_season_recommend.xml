@@ -36,11 +36,7 @@
             android:src="@mipmap/head" />
     </RelativeLayout>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:src="@mipmap/banner2" />
+
 
     <com.example.administrator.catemenu.customview.LazyScrollView
         android:id="@+id/lazyscrollview"
@@ -51,107 +47,23 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:padding="2dp">
-
-            <LinearLayout
-                android:id="@+id/layoutleft"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/iv_banner_recommended"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginRight="3dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="6dp"
-                    android:scaleType="centerCrop"
-                    android:src="@mipmap/shanyu" />
-                <ImageView
-                    android:layout_marginTop="6dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:scaleType="centerCrop"
-                    android:src="@mipmap/liuxiangpaigu" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="6dp"
-                    android:scaleType="centerCrop"
-                    android:src="@mipmap/shanyu" />
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:scaleType="centerCrop"
-                    android:src="@mipmap/liuxiangpaigu" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="6dp"
-                    android:scaleType="centerCrop"
-                    android:src="@mipmap/shanyu" />
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:scaleType="centerCrop"
-                    android:src="@mipmap/liuxiangpaigu" />
-
-            </LinearLayout>
-
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@mipmap/banner2" />
             <LinearLayout
-                android:id="@+id/layoutrghit"
+                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_marginLeft="3dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:scaleType="centerCrop"
-                    android:src="@mipmap/liuxiangpaigu" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="6dp"
-                    android:scaleType="centerCrop"
-                    android:src="@mipmap/shanyu" />
-                <ImageView
-                    android:layout_marginTop="6dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:scaleType="centerCrop"
-                    android:src="@mipmap/liuxiangpaigu" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="6dp"
-                    android:scaleType="centerCrop"
-                    android:src="@mipmap/shanyu" />
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:scaleType="centerCrop"
-                    android:src="@mipmap/liuxiangpaigu" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="6dp"
-                    android:scaleType="centerCrop"
-                    android:src="@mipmap/shanyu" />
-
             </LinearLayout>
         </LinearLayout>
     </com.example.administrator.catemenu.customview.LazyScrollView>
-
 
 </LinearLayout>
