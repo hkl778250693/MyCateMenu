@@ -29,52 +29,7 @@
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"/>
     </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="180dp">
-        <ViewFlipper
-            android:id="@+id/flipper"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </ViewFlipper>
-        <RadioGroup
-            android:id="@+id/radio_group"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerInParent="true"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
-            <RadioButton
-                android:id="@+id/radio_btn1"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:button="@null"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/homepage_radiobutton_bg"/>
-            <RadioButton
-                android:id="@+id/radio_btn2"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:button="@null"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/homepage_radiobutton_bg"/>
-            <RadioButton
-                android:id="@+id/radio_btn3"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:button="@null"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/homepage_radiobutton_bg"/>
-            <RadioButton
-                android:id="@+id/radio_btn4"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:button="@null"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/homepage_radiobutton_bg"/>
-        </RadioGroup>
-    </RelativeLayout>
+
     <ListView
         android:id="@+id/listview"
         android:dividerHeight="10dp"
