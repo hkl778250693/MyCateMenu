@@ -62,6 +62,7 @@ public class GuideActivity extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent(GuideActivity.this,HomePageActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -118,7 +119,6 @@ public class GuideActivity extends Activity {
         return gestureDetector.onTouchEvent(event);
     }
 
-    //重写页面销毁方法
 
     private void into() {
         TextView text = (TextView) view.findViewById(R.id.tv_text);
