@@ -1,6 +1,5 @@
 package com.example.administrator.catemenu.fragment;
 
-import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
@@ -12,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.RadioButton;
 
 import com.example.administrator.catemenu.R;
-import com.example.administrator.catemenu.activity.SquarePublishActivity;
 import com.example.administrator.catemenu.adapter.SquareFragmentPagerAdapter;
 
 import java.util.ArrayList;
@@ -48,6 +46,7 @@ public class SquareFragment extends Fragment {
         discussBtn.setChecked(true);
         fragmentList.add(new SquareDiscussFragment());
         fragmentList.add(new SquareVideoFragment());
+        fragmentList.add(new SquarePublishFragment());
         fragmentManager = getChildFragmentManager();
         squareViewPager.setAdapter(new SquareFragmentPagerAdapter(fragmentManager,fragmentList));
         squareViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -64,6 +63,9 @@ public class SquareFragment extends Fragment {
                         break;
                     case 1:
                         videoBtn.setChecked(true);
+                        break;
+                    case 2:
+                        releaseBtn.setChecked(true);
                         break;
                 }
             }
@@ -87,8 +89,7 @@ public class SquareFragment extends Fragment {
                     squareViewPager.setCurrentItem(1);
                     break;
                 case R.id.rb_square_release:
-                    Intent intent = new Intent(getActivity(), SquarePublishActivity.class);
-                    startActivity(intent);
+                    squareViewPager.setCurrentItem(2);
                     break;
             }
         }
