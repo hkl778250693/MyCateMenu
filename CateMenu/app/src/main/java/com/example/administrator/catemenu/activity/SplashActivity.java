@@ -7,15 +7,13 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 
-import com.example.administrator.catemenu.modle.ActivityController;
 
 
 /**
  * Created by Administrator on 2016/11/29.
  */
-public class SplashActivity extends BaseActivity {
+public class SplashActivity extends Activity {
     //handler处理销毁activity消息
     /*Handler handler = new Handler(){
         @Override
@@ -74,12 +72,14 @@ public class SplashActivity extends BaseActivity {
                     mIntent = new Intent();
                     mIntent.setClass(SplashActivity.this,HomePageActivity.class);
                     SplashActivity.this.startActivity(mIntent);
+                    finish();
                     break;
                 case SWITCH_GUIDEACTIVITY:
                     mIntent = new Intent();
                     mIntent.setClass(SplashActivity.this,GuideActivity.class);
                     //handler.sendEmptyMessage(0);
                     SplashActivity.this.startActivity(mIntent);
+                    finish();
                     break;
             }
             super.handleMessage(msg);

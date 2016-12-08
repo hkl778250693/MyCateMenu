@@ -144,7 +144,6 @@ public class HomePageActivity extends FragmentActivity {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-
         }
     };
 
@@ -229,24 +228,29 @@ public class HomePageActivity extends FragmentActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId){
                     case R.id.integral_btn:
-                        intent = new Intent(HomePageActivity.this,FeedBackActivity.class);
+                        integralBtn.setChecked(false);
+                        Intent intent = new Intent(HomePageActivity.this,FeedBackActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.my_attention_btn:
-                        intent = new Intent(HomePageActivity.this,AttentionActivity.class);
-                        startActivity(intent);
+                        myAttentionBtn.setChecked(false);
+                        Intent intent1 = new Intent(HomePageActivity.this,AttentionActivity.class);
+                        startActivity(intent1);
                         break;
                     case R.id.my_upload_btn:
-                        intent = new Intent(HomePageActivity.this,UploadActivity.class);
-                        startActivity(intent);
+                        myUploadBtn.setChecked(false);
+                        Intent intent2 = new Intent(HomePageActivity.this,UploadActivity.class);
+                        startActivity(intent2);
                         break;
                     case R.id.my_sixin_btn:
-                        intent = new Intent(HomePageActivity.this,SixinActivity.class);
-                        startActivity(intent);
+                        mySixinBtn.setChecked(false);
+                        Intent intent3 = new Intent(HomePageActivity.this,SixinActivity.class);
+                        startActivity(intent3);
                         break;
                     case R.id.feed_back_btn:
-                        intent = new Intent(HomePageActivity.this,FeedBackActivity.class);
-                        startActivity(intent);
+                        feedBackBtn.setChecked(false);
+                        Intent intent4 = new Intent(HomePageActivity.this,FeedBackActivity.class);
+                        startActivity(intent4);
                         break;
                 }
             }
@@ -313,8 +317,8 @@ public class HomePageActivity extends FragmentActivity {
                 && event.getAction() == KeyEvent.ACTION_DOWN
                 && event.getRepeatCount() == 0) {
             if((System.currentTimeMillis()-exitTime) > 2000){
-                Toast.makeText(getApplicationContext(), "再按一次退出程序！", Toast.LENGTH_SHORT).show();
                 exitTime = System.currentTimeMillis();
+                Toast.makeText(getApplicationContext(), "再按一次退出程序！", Toast.LENGTH_SHORT).show();
             } else {
                 finish();
                 System.exit(0);
@@ -323,5 +327,16 @@ public class HomePageActivity extends FragmentActivity {
         }
         return super.dispatchKeyEvent(event);
     }
+
+    /*@Override
+    public boolean dispatchKeyEvent(KeyEvent event) {
+
+        //点击返回键并且是长按，则退出
+        if(event.getKeyCode() == KeyEvent.KEYCODE_BACK && event.isLongPress()) {
+            System.exit(0);
+            return true;
+        }
+        return false;
+    }*/
 
 }

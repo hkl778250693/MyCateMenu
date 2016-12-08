@@ -60,7 +60,6 @@
         <activity android:name=".activity.MadeDetailsActivity"/>
         <activity android:name=".activity.SixinActivity"/>
         <activity android:name=".activity.SearchResultActivity"/>
-        <activity android:name=".activity.SquarePublishActivity"/>
         <activity android:name=".activity.SquareDiscussTopicActivity"/>
         <activity android:name=".activity.SquareDiscussTopicUserCommentsActivity"/>
         <activity android:name=".activity.ClassifyMeatActivity"/>
