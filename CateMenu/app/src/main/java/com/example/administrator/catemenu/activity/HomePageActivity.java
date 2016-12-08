@@ -35,11 +35,11 @@ import com.sina.weibo.sdk.net.AsyncWeiboRunner;
 import com.sina.weibo.sdk.net.RequestListener;
 import com.sina.weibo.sdk.net.WeiboParameters;
 
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-
 
 
 /**
@@ -104,14 +104,6 @@ public class HomePageActivity extends FragmentActivity {
         if (homepageBtn.isChecked()) {
             addHomepageFragment();
         }
-
-        Log.i("onCreate===","");
-        new Thread(){
-            @Override
-            public void run() {
-                intoweibo();
-            }
-        }.start();
 
     }
 
@@ -332,8 +324,4 @@ public class HomePageActivity extends FragmentActivity {
         return super.dispatchKeyEvent(event);
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
 }
