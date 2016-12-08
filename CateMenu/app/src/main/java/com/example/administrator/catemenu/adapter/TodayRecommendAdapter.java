@@ -9,6 +9,7 @@ import android.widget.BaseAdapter;
 import com.example.administrator.catemenu.R;
 import com.example.administrator.catemenu.modle.TodayRecommendItem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,21 +18,21 @@ import java.util.List;
 public class TodayRecommendAdapter extends BaseAdapter {
     Context context;
     LayoutInflater layoutInflater;
-    List<TodayRecommendItem> todayRecommendItemList;
+    ArrayList<TodayRecommendItem.ResultBean> todayRecommendItemList;
 
-    public TodayRecommendAdapter(Context context,List<TodayRecommendItem> todayRecommendItemList){
+    public TodayRecommendAdapter(Context context,ArrayList<TodayRecommendItem.ResultBean> todayRecommendItemList){
         this.context = context;
         this.todayRecommendItemList = todayRecommendItemList;
         layoutInflater = LayoutInflater.from(context);
     }
     @Override
     public int getCount() {
-        return todayRecommendItemList.size();
+        return 10;
     }
 
     @Override
     public Object getItem(int position) {
-        return todayRecommendItemList.get(position);
+        return position;
     }
 
     @Override

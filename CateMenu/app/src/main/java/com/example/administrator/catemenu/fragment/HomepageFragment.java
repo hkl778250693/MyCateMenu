@@ -257,7 +257,16 @@ public class HomepageFragment extends Fragment implements View.OnClickListener, 
                 }
                 break;
             case R.id.today_recommend:
+                ArrayList<String> foodid=new ArrayList<String>();
+                for (int i=0;i<dinnerArrayList.size();i++){
+                    FoodDinner.ResultBean resultBean=dinnerArrayList.get(i);
+                    foodid.add(""+resultBean.getId());
+                    Log.i("today_recommend===",""+resultBean.getId());
+                }
                 intent = new Intent(activity, TodayRecommendActivity.class);
+                Bundle bundle=new Bundle();
+                bundle.putStringArrayList("foodid",foodid);
+                intent.putExtras(bundle);
                 startActivity(intent);
                 break;
             case R.id.week_order:
