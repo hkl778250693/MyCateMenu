@@ -12,6 +12,6 @@ public class FoodPaymentDetailsActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food_payment_details);
+        setContentView(R.layout.activity_payment_details);
     }
 }

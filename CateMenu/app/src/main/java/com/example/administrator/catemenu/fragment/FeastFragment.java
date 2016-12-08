@@ -3,11 +3,15 @@ package com.example.administrator.catemenu.fragment;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 import com.example.administrator.catemenu.R;
 import com.example.administrator.catemenu.adapter.YhzsAdapter;
@@ -29,6 +33,9 @@ public class FeastFragment extends Fragment {
     RadioButton friendBtn;
     RadioButton birthdayBtn;
     RadioButton festivalBtn;
+    View itemView;
+    LayoutInflater layoutInflater;
+
 
     @Nullable
     @Override
@@ -58,10 +65,13 @@ public class FeastFragment extends Fragment {
         birthdayBtn.setOnClickListener(clickListener);
         festivalBtn.setOnClickListener(clickListener);
 
+
         getData();
         yhzsListview = (ListView) view.findViewById(R.id.yhzs_listview);
-        YhzsAdapter yhzsAdapter = new YhzsAdapter(getActivity(),yhzsList);
+        final YhzsAdapter yhzsAdapter = new YhzsAdapter(getActivity(),yhzsList);
         yhzsListview.setAdapter(yhzsAdapter);
+        layoutInflater = LayoutInflater.from(getActivity());
+        itemView = layoutInflater.inflate(R.layout.listview_feast_item,null);
         return view;
     }
 
@@ -92,6 +102,8 @@ public class FeastFragment extends Fragment {
         for(int i=0;i<10;i++){
             Yhzs yhzs = new Yhzs();
             yhzs.setTimeTv("100分钟");
+            yhzs.setFeastFoodName("1.酸菜鱼 2.酸菜鱼 3.酸菜鱼 1.酸菜鱼 2.酸菜鱼 3.酸菜鱼 1.酸菜鱼 2.酸菜鱼 3.酸菜鱼 1.酸菜鱼 2.酸菜鱼 3.酸菜鱼");
+            yhzs.setZhanKai("[展开]");
             yhzsList.add(yhzs);
         }
     }

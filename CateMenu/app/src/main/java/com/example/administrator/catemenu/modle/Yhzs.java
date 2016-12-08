@@ -10,6 +10,8 @@ public class Yhzs {
     private String tuijianTv;
     private String nanduTv;
     private String timeTv;
+    private String feastFoodName;
+    private String zhanKai;
 
     public int getHeadImg() {
         return headImg;
@@ -57,5 +59,21 @@ public class Yhzs {
 
     public void setTimeTv(String timeTv) {
         this.timeTv = timeTv;
+    }
+
+    public String getFeastFoodName() {
+        return feastFoodName;
+    }
+
+    public void setFeastFoodName(String feastFoodName) {
+        this.feastFoodName = feastFoodName;
+    }
+
+    public String getZhanKai() {
+        return zhanKai;
+    }
+
+    public void setZhanKai(String zhanKai) {
+        this.zhanKai = zhanKai;
     }
 }
