@@ -53,7 +53,7 @@ public class BuyActivity extends Activity {
                     }
                     break;
                 case R.id.buy_textview:
-                    Intent intent = new Intent(BuyActivity.this,OrderDetailsActivity.class);
+                    Intent intent = new Intent(BuyActivity.this,FoodOrderDetailsActivity.class);
                     startActivity(intent);
                     break;
                 case R.id.back_buy:

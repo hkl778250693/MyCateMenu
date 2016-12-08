@@ -24,7 +24,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.SplashActivity" android:launchMode="singleInstance">
         <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,7 +47,6 @@
         <activity android:name=".activity.FoodPaymentDetailsActivity"/>
         <activity android:name=".activity.VideoActivity"/>
         <activity android:name=".activity.MenuFileActivity"/>
-        <activity android:name=".activity.TasteSettingsActivity"/>
         <activity android:name=".activity.SigninActivity"/>
         <activity android:name=".activity.CollectActivity"/>
         <activity android:name=".activity.ShareActivity"/>
@@ -68,9 +66,8 @@
         <activity android:name=".activity.ShopXiangqingActivity"/>
         <activity android:name=".activity.BuyActivity"/>
         <activity android:name=".activity.BuySuccessActivity"/>
-        <activity android:name=".activity.OrderDetailsActivity"/>
-        <activity android:name=".activity.PaymentDetailsActivity"/>
         <activity android:name=".activity.PersonSettingEditActivity"/>
+        <activity android:name=".activity.UseRecordActivity"/>
 
         <activity
             android:name="com.mob.tools.MobUIShell"

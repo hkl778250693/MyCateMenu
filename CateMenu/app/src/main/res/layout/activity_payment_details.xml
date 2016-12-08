@@ -142,15 +142,16 @@
             />
     </LinearLayout>
     <TextView
-        android:id="@+id/payment_details_pay"
+        android:id="@+id/pay_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="付款"
-        android:textColor="#FFFFFF"
+        android:textColor="@android:color/white"
         android:textSize="20sp"
         android:gravity="center"
-        android:background="#FFB023"
-        android:paddingTop="17dp"
-        android:paddingBottom="15dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/yellow_bg_shape"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         />
 </LinearLayout>

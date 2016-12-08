@@ -125,14 +125,11 @@ public class GuideActivity extends Activity {
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/zitiguanjiafangmeng.ttf");
         text.setTypeface(typeface);
         TextView text1 = (TextView) view1.findViewById(R.id.tv_text1);
-        Typeface typeface1 = Typeface.createFromAsset(getAssets(), "fonts/zitiguanjiafangmeng.ttf");
-        text1.setTypeface(typeface1);
+        text1.setTypeface(typeface);
         TextView text2 = (TextView) view2.findViewById(R.id.tv_text2);
-        Typeface typeface2 = Typeface.createFromAsset(getAssets(), "fonts/zitiguanjiafangmeng.ttf");
-        text2.setTypeface(typeface2);
+        text2.setTypeface(typeface);
         TextView text3= (TextView) view2.findViewById(R.id.tv_getlogin);
-        Typeface typeface3 = Typeface.createFromAsset(getAssets(), "fonts/zitiguanjiafangmeng.ttf");
-        text3.setTypeface(typeface3);
+        text3.setTypeface(typeface);
 
     }
 }

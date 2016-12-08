@@ -229,28 +229,28 @@ public class HomePageActivity extends FragmentActivity {
                 switch (checkedId){
                     case R.id.integral_btn:
                         integralBtn.setChecked(false);
-                        Intent intent = new Intent(HomePageActivity.this,FeedBackActivity.class);
+                        intent = new Intent(HomePageActivity.this,UseRecordActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.my_attention_btn:
                         myAttentionBtn.setChecked(false);
-                        Intent intent1 = new Intent(HomePageActivity.this,AttentionActivity.class);
-                        startActivity(intent1);
+                        intent = new Intent(HomePageActivity.this,AttentionActivity.class);
+                        startActivity(intent);
                         break;
                     case R.id.my_upload_btn:
                         myUploadBtn.setChecked(false);
-                        Intent intent2 = new Intent(HomePageActivity.this,UploadActivity.class);
-                        startActivity(intent2);
+                        intent = new Intent(HomePageActivity.this,UploadActivity.class);
+                        startActivity(intent);
                         break;
                     case R.id.my_sixin_btn:
                         mySixinBtn.setChecked(false);
-                        Intent intent3 = new Intent(HomePageActivity.this,SixinActivity.class);
-                        startActivity(intent3);
+                        intent = new Intent(HomePageActivity.this,SixinActivity.class);
+                        startActivity(intent);
                         break;
                     case R.id.feed_back_btn:
                         feedBackBtn.setChecked(false);
-                        Intent intent4 = new Intent(HomePageActivity.this,FeedBackActivity.class);
-                        startActivity(intent4);
+                        intent = new Intent(HomePageActivity.this,FeedBackActivity.class);
+                        startActivity(intent);
                         break;
                 }
             }

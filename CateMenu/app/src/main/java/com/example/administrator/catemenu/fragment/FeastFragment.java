@@ -1,6 +1,5 @@
 package com.example.administrator.catemenu.fragment;
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
