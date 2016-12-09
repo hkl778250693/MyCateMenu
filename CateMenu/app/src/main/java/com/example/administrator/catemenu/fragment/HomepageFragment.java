@@ -257,15 +257,16 @@ public class HomepageFragment extends Fragment implements View.OnClickListener, 
                 }
                 break;
             case R.id.today_recommend:
-                ArrayList<String> foodid=new ArrayList<String>();
-                for (int i=0;i<dinnerArrayList.size();i++){
-                    FoodDinner.ResultBean resultBean=dinnerArrayList.get(i);
-                    foodid.add(""+resultBean.getId());
-                    Log.i("today_recommend===",""+resultBean.getId());
-                }
+//                ArrayList<String> foodid=new ArrayList<String>();
+//                for (int i=0;i<dinnerArrayList.size();i++){
+//                    FoodDinner.ResultBean resultBean=dinnerArrayList.get(i);
+//                    foodid.add(""+resultBean.getId());
+//                    Log.i("today_recommend===",""+resultBean.getId());
+//                }
                 intent = new Intent(activity, TodayRecommendActivity.class);
                 Bundle bundle=new Bundle();
-                bundle.putStringArrayList("foodid",foodid);
+//                bundle.putParcelableArrayList("dinnerArrayList",dinnerArrayList);
+                bundle.putString("food",fooddinner);
                 intent.putExtras(bundle);
                 startActivity(intent);
                 break;
@@ -284,7 +285,7 @@ public class HomepageFragment extends Fragment implements View.OnClickListener, 
     GestureDetector.OnGestureListener onGestureListener = new GestureDetector.OnGestureListener() {
         @Override
         public boolean onDown(MotionEvent e) {//down事件
-            Log.i("onDown", "onDown======");
+
             return false;
         }
 
@@ -340,7 +341,7 @@ public class HomepageFragment extends Fragment implements View.OnClickListener, 
 
 
     public void httpinit(String name) {
-        HttpUtilsAsync.get("http://10.0.2.2/index.php/home/index/" + "" + name, new JsonHttpResponseHandler() {
+        HttpUtilsAsync.get("http://10.0.2.2/index.php/home/index/"+name , new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);

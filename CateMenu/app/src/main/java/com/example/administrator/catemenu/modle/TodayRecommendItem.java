@@ -65,7 +65,7 @@ public class TodayRecommendItem {
 
         private String id;
         private String name;
-        private Object imageurl_small;
+        private String imageurl_small;
         private Object imageurl_big;
         private Object introduce;
         private String ingredientid;
@@ -98,11 +98,11 @@ public class TodayRecommendItem {
             this.name = name;
         }
 
-        public Object getImageurl_small() {
+        public String getImageurl_small() {
             return imageurl_small;
         }
 
-        public void setImageurl_small(Object imageurl_small) {
+        public void setImageurl_small(String imageurl_small) {
             this.imageurl_small = imageurl_small;
         }
 
