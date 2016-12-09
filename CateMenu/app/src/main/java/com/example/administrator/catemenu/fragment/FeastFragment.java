@@ -15,6 +15,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.example.administrator.catemenu.R;
+import com.example.administrator.catemenu.activity.FoodDetailsActivity;
 import com.example.administrator.catemenu.activity.SearchActivity;
 import com.example.administrator.catemenu.adapter.YhzsAdapter;
 import com.example.administrator.catemenu.modle.Yhzs;
@@ -77,7 +78,7 @@ public class FeastFragment extends Fragment {
         yhzsListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(),SearchActivity.class);
+                Intent intent = new Intent(getActivity(),FoodDetailsActivity.class);
                 startActivity(intent);
             }
         });

@@ -80,7 +80,7 @@ public class HomepageFragment extends Fragment implements View.OnClickListener, 
         view = inflater.inflate(R.layout.fragment_homepage, null);
 
         //找到相应的控件id
-        breakfast = (RadioButton) view.findViewById(R.id.btn_breakfast_homepage);
+        breakfast = (RadioButton) view.findViewById(R.id.btn_breakfast);
         desssert = (RadioButton) view.findViewById(R.id.btn_dessert);
         dinner = (RadioButton) view.findViewById(R.id.btn_dinner);
         lunch = (RadioButton) view.findViewById(R.id.btn_lunch);

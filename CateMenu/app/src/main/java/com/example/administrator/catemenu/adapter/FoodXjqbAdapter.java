@@ -40,7 +40,7 @@ public class FoodXjqbAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        if(view != null){
+        if(view == null){
             view = layoutInflater.inflate(R.layout.listview_xjqb_comment_item,null);
         }
         return view;

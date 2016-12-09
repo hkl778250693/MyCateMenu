@@ -12,8 +12,12 @@
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!--在SDCard中创建与删除文件权限-->
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <!--往SDCard写入数据权限-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!--照相机权限-->
+    <uses-permission android:name="android.permission.CAMERA"/>
     <uses-feature android:name = "android.hardware.camera" />
     <uses-feature android:name = "android.hardware.camera.autofocus" />
 
@@ -68,6 +72,10 @@
         <activity android:name=".activity.BuySuccessActivity"/>
         <activity android:name=".activity.PersonSettingEditActivity"/>
         <activity android:name=".activity.UseRecordActivity"/>
+        <activity android:name=".activity.FoodDetailsActivity"/>
+        <activity android:name=".activity.MyFoodMenuActivity"/>
+        <activity android:name=".activity.ImmediateMenuActivity"/>
+        <activity android:name=".activity.ShareListviewActivity"/>
 
         <activity
             android:name="com.mob.tools.MobUIShell"

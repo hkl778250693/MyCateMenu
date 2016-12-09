@@ -17,8 +17,6 @@
     <string name="xiangjianqiebing">香煎茄饼</string>
     <string name="add_menu">加入菜单</string>
     <string name="collect">收藏</string>
-    <string name="foodxiangqing">菜品详情</string>
-    <string name="chihuotaolun">吃货讨论</string>
     <string name="comment">我要评论</string>
     <string name="share">分享</string>
     <string name="mine">我的</string>
@@ -68,6 +66,15 @@
     <string name="edit">修改个人信息</string>
     <string name="use_record">使用记录</string>
     <string name="use_time">使用时间:</string>
-
+    <string name="food_detail">菜品详情</string>
+    <string name="foodie_discuss">吃货讨论</string>
+    <string name="my_menu">我的菜单</string>
+    <string name="immediate_menu">即时菜单</string>
+    <string name="his_homepage">他的主页</string>
+    <string name="his_answer">他的回答</string>
+    <string name="his_attention">他关注的人</string>
+    <string name="his_fans">他的粉丝</string>
+    <string name="person_introduce">个人简介</string>
+    <string name="recently_publish">近期发布</string>
 
 </resources>

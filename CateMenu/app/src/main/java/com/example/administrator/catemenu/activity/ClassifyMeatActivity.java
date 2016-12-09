@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -56,6 +57,13 @@ public class ClassifyMeatActivity extends Activity {
         //设置适配器
         MeatItemAdapter meatItemAdapter = new MeatItemAdapter(this,meatItemList);
         listview.setAdapter(meatItemAdapter);
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(ClassifyMeatActivity.this,FoodDetailsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     View.OnClickListener clickListener = new View.OnClickListener() {

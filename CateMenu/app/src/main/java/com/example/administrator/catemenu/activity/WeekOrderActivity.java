@@ -29,8 +29,7 @@ public class WeekOrderActivity extends Activity {
     ImageView backBtn;
     Intent intent;
     ListView weekListview;
-    ImageView headImg;
-    ImageView closeImg;
+
     RadioButton btnBreakfast;
     RadioButton btnLunch;
     RadioButton btnDessert;
@@ -45,7 +44,6 @@ public class WeekOrderActivity extends Activity {
         getData();
         //找到相应的控件id
         backBtn = (ImageView) findViewById(R.id.back_btn);
-        headImg = (ImageView) findViewById(R.id.head_img);
         weekListview = (ListView) findViewById(R.id.week_listview);
         btnBreakfast = (RadioButton) findViewById(R.id.btn_breakfast);
         btnLunch = (RadioButton) findViewById(R.id.btn_lunch);
@@ -54,7 +52,6 @@ public class WeekOrderActivity extends Activity {
 
         //设置点击事件
         backBtn.setOnClickListener(clickListener);
-        headImg.setOnClickListener(clickListener);
         btnBreakfast.setChecked(true);
         btnBreakfast.setOnClickListener(clickListener);
         btnLunch.setOnClickListener(clickListener);
@@ -68,26 +65,8 @@ public class WeekOrderActivity extends Activity {
         weekListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                headImg = (ImageView) view.findViewById(R.id.head_img);
-                Log.i("weekListview","weekListview");
-                headImg.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        View view1 = getLayoutInflater().inflate(R.layout.popouwindow_image,null);
-                        final PopupWindow popupWindow = new PopupWindow(view1);
-                        popupWindow.setWidth(LinearLayout.LayoutParams.WRAP_CONTENT);
-                        popupWindow.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
-                        popupWindow.setBackgroundDrawable(getResources().getDrawable(R.drawable.homepage_edittext_serch_shape));
-                        popupWindow.showAtLocation(headImg,Gravity.CENTER,0,0);
-                        closeImg = (ImageView) view1.findViewById(R.id.close_img);
-                        closeImg.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                popupWindow.dismiss();
-                            }
-                        });
-                    }
-                });
+                Intent intent = new Intent(WeekOrderActivity.this,FoodDetailsActivity.class);
+                startActivity(intent);
             }
         });
     }

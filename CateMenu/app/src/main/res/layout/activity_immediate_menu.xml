@@ -4,7 +4,28 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
-    <include layout="@layout/food_guide_layout"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow">
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:padding="11dp"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/immediate_menu"
+            android:textColor="@android:color/white"
+            android:textSize="23sp" />
+    </RelativeLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -52,6 +73,7 @@
                     android:layout_marginBottom="8dp"
                     />
                 <ImageView
+                    android:id="@+id/add_imageview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@mipmap/tianjia"

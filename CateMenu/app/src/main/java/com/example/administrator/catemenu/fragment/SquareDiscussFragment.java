@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,14 +30,9 @@ public class SquareDiscussFragment extends Fragment {
         listView.setAdapter(discussFragemtAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
-                view.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent=new Intent(getActivity(), SquareDiscussTopicActivity.class);
-                        startActivity(intent);
-                    }
-                });
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(getActivity(), SquareDiscussTopicActivity.class);
+                startActivity(intent);
             }
         });
         return view;
