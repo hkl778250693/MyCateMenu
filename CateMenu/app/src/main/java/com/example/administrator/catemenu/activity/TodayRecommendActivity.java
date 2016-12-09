@@ -3,7 +3,6 @@ package com.example.administrator.catemenu.activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.gesture.Gesture;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
@@ -51,14 +50,13 @@ public class TodayRecommendActivity extends Activity implements GestureDetector.
 
     @InjectView(R.id.tv_Recommendname)
     TextView tvRecommendname;
-    private View view;
     @InjectView(R.id.back_btn)
     ImageView backBtn;
     @InjectView(R.id.head_img)
     ImageView headImg;
     @InjectView(R.id.listview)
     ListView listview;
-
+    private View view;
     private ViewFlipper flipper;
     private List<TodayRecommendItem.ResultBean> resultBeanList = new ArrayList<TodayRecommendItem.ResultBean>();
     private Bundle bundle;

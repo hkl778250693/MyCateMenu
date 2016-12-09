@@ -66,9 +66,8 @@
         <activity android:name=".activity.ShopXiangqingActivity"/>
         <activity android:name=".activity.BuyActivity"/>
         <activity android:name=".activity.BuySuccessActivity"/>
-        <activity android:name=".activity.OrderDetailsActivity"/>
-        <activity android:name=".activity.PaymentDetailsActivity"/>
         <activity android:name=".activity.PersonSettingEditActivity"/>
+        <activity android:name=".activity.UseRecordActivity"/>
 
         <activity
             android:name="com.mob.tools.MobUIShell"

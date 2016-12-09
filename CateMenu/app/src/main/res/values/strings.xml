@@ -66,4 +66,8 @@
     <string name="address">收货地址</string>
     <string name="gender">性别</string>
     <string name="edit">修改个人信息</string>
+    <string name="use_record">使用记录</string>
+    <string name="use_time">使用时间:</string>
+
+
 </resources>

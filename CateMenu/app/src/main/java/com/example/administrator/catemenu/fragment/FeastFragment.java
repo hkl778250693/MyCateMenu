@@ -1,6 +1,9 @@
 package com.example.administrator.catemenu.fragment;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c3c7f8fe0553b35aa1f1df611addc673e32d508d
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;

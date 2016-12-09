@@ -53,9 +53,9 @@ public class YhzsAdapter extends BaseAdapter {
         if(convertView == null){
             convertView = layoutInflater.inflate(R.layout.listview_feast_item,null);
             viewHolder = new ViewHolder();
-            convertView.setTag(viewHolder);
             viewHolder.textViewFeastFoodName = (TextView) convertView.findViewById(R.id.feast_food_name);
             viewHolder.textViewZhankai = (TextView) convertView.findViewById(R.id.feast_zhankai_tv);
+            convertView.setTag(viewHolder);
         }else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
