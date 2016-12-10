@@ -124,7 +124,8 @@
         android:dividerHeight="10dp"
         android:divider="@android:color/white"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
 
     </ListView>
 

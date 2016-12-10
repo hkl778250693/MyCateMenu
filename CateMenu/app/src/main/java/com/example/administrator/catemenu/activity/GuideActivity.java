@@ -31,6 +31,9 @@ public class GuideActivity extends BaseActivity {
     List<View> arraylist;
     TextView tvgetlogin;
     GestureDetector gestureDetector;
+    View view;
+    View view1;
+    View view2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +45,6 @@ public class GuideActivity extends BaseActivity {
         gestureDetector = new GestureDetector(this,onGestureListener);
 
         LayoutInflater layoutInflater = LayoutInflater.from(this);
-        View view = layoutInflater.inflate(R.layout.viewpager_guidepage_one, null);
-        View view1 = layoutInflater.inflate(R.layout.viewpager_guidepage_two, null);
-        View view2 = layoutInflater.inflate(R.layout.viewpager_guidepage_three, null);
         view = layoutInflater.inflate(R.layout.viewpager_guidepage_one, null);
         view1 = layoutInflater.inflate(R.layout.viewpager_guidepage_two, null);
         view2 = layoutInflater.inflate(R.layout.viewpager_guidepage_three, null);
@@ -125,6 +125,7 @@ public class GuideActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+    }
     private void into() {
         TextView text = (TextView) view.findViewById(R.id.tv_text);
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/zitiguanjiafangmeng.ttf");
