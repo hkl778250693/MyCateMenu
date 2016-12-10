@@ -32,6 +32,10 @@ public class GuideActivity extends Activity {
     View view;
     View view1;
     View view2;
+<<<<<<< HEAD
+=======
+
+>>>>>>> hkl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -119,7 +123,15 @@ public class GuideActivity extends Activity {
         return gestureDetector.onTouchEvent(event);
     }
 
+<<<<<<< HEAD
 
+=======
+    //重写页面销毁方法
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+>>>>>>> hkl
     private void into() {
         TextView text = (TextView) view.findViewById(R.id.tv_text);
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/zitiguanjiafangmeng.ttf");

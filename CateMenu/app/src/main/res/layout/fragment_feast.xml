@@ -128,7 +128,13 @@
         android:divider="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:scrollbars="none"
         android:focusable="true"/>
+=======
+        android:scrollbars="none">
+
+    </ListView>
+>>>>>>> hkl
 
 </LinearLayout>
